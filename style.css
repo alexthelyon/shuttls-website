@@ -1,13 +1,13 @@
 /* Shuttls - Premium Sports Tech Design System */
 
 :root {
-    --bg-dark: #0a0e17;
+    --bg-dark: #0a0000;
     --bg-card: rgba(255, 255, 255, 0.05);
-    --accent-cyan: #00f2fe;
-    --accent-blue: #4facfe;
+    --accent-red: #d31e28;
+    --accent-yellow: #f1b333;
     --text-main: #ffffff;
-    --text-muted: #a0aec0;
-    --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    --text-muted: #e0e0e0;
+    --gradient-primary: linear-gradient(135deg, var(--accent-red) 0%, #8b0000 100%);
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -117,7 +117,7 @@ h3 {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-yellow);
 }
 
 .feature-card h3 {
@@ -151,7 +151,134 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--accent-cyan);
+    color: var(--accent-yellow);
+}
+
+/* Growth & Partnerships */
+.growth {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--bg-dark), rgba(211, 30, 40, 0.05));
+}
+
+.growth-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.growth-card h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.growth-card p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.growth-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .h3 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item span {
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Enquiries Section */
+.enquiries {
+    padding: 100px 0;
+}
+
+.enquiries-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid var(--accent-red);
+}
+
+.enquiries-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.enquiries-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.enquiries-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.enquiries-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.enquiries-form input,
+.enquiries-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.enquiries-form input:focus,
+.enquiries-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(211, 30, 40, 0.3);
 }
 
 /* Micro-animations */
