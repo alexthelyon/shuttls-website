@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Alex\\\\Desktop\\\\ShuttlsWebsite\" -Recurse -File)",
+      "Bash(Select-Object -First 50)",
+      "Bash(Format-Table FullName)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\Alex\\\\Downloads\\\\shuttle\\\\shuttle\\\\Assets.xcassets\\\\SHUTTLS-LOGO.imageset\\\\SHUTTLS-LOGO.png\" \"C:\\\\Users\\\\Alex\\\\Desktop\\\\ShuttlsWebsite\\\\logo.png\" -Force)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\Alex\\\\Downloads\\\\shuttle\\\\shuttle\\\\Assets.xcassets\\\\AppIcon.appiconset\\\\Copy of IS ON SHUTTLS \\(Logo\\) \\(2\\) \\(1\\).png\" \"C:\\\\Users\\\\Alex\\\\Desktop\\\\ShuttlsWebsite\\\\app-icon.png\" -Force)",
+      "Bash(Write-Output \"Done\")",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\Alex\\\\Downloads\\\\shuttle\\\\shuttle\\\\Assets.xcassets\\\\SHUTTLS-LOGO.imageset\\\\SHUTTLS-LOGO.png\" \"C:\\\\Users\\\\Alex\\\\Desktop\\\\ShuttlsWebsite\\\\logo.png\" -Force)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\Alex\\\\Downloads\\\\shuttle\\\\shuttle\\\\Assets.xcassets\\\\AppIcon.appiconset\\\\Copy of IS ON SHUTTLS \\(Logo\\) \\(2\\) \\(1\\).png\" \"C:\\\\Users\\\\Alex\\\\Desktop\\\\ShuttlsWebsite\\\\app-icon.png\" -Force)",
+      "PowerShell(\"Done\")"
+    ]
+  }
+}
