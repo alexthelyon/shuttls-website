@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Check in · Shuttls</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 28px;
+      background: #101114; color: #faf7f2; font-family: system-ui, sans-serif; }
+    main { width: min(100%, 400px); text-align: center; }
+    .mark { font-size: 48px; }
+    h1 { font-size: 38px; line-height: 1.1; letter-spacing: -1.5px; }
+    p { color: #bfc0c5; line-height: 1.6; }
+    a { display: block; padding: 18px; border-radius: 16px; color: white; font-weight: 700;
+      text-decoration: none; background: #e83f4f; margin-top: 18px; }
+    .store { background: #27282d; }
+    .hint { font-size: 14px; margin-top: 28px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">🏸</div>
+    <h1 id="title">Ready to play?</h1>
+    <p id="description">Open Shuttls and confirm your check-in.</p>
+    <div id="actions" hidden>
+      <a id="open">Open Shuttls</a>
+      <a id="ios" class="store" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633">Get Shuttls for iPhone</a>
+      <a id="android" class="store" href="https://play.google.com/store/apps/details?id=com.shuttls.android">Get Shuttls for Android</a>
+      <p class="hint">Just installed? Come back here and tap Open Shuttls, or scan the club QR again.</p>
+    </div>
+    <noscript><p>Enable JavaScript to open your club check-in.</p></noscript>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const id = params.get('id') || '';
+    const token = params.get('t') || '';
+    if (!uuid.test(id) || !uuid.test(token)) {
+      document.getElementById('title').textContent = 'Scan your club QR';
+      document.getElementById('description').textContent = 'This link is incomplete. Scan the printed QR at your club to check in.';
+    } else {
+      const app = `shuttls://checkin?id=${id.toLowerCase()}&t=${token.toLowerCase()}`;
+      const android = /Android/i.test(navigator.userAgent);
+      const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      document.getElementById('actions').hidden = false;
+      if (android) {
+        const fallback = encodeURIComponent(document.getElementById('android').href);
+        document.getElementById('open').href = `intent://checkin?id=${id.toLowerCase()}&t=${token.toLowerCase()}#Intent;scheme=shuttls;package=com.shuttls.android;S.browser_fallback_url=${fallback};end`;
+        document.getElementById('ios').hidden = true;
+      } else {
+        document.getElementById('open').href = app;
+        if (ios) document.getElementById('android').hidden = true;
+      }
+      // Browsers may require a user gesture. Keep Open Shuttls and the store
+      // fallback visible; never send a successfully opened app to a timed store redirect.
+      if (ios) location.replace(app);
+    }
+  </script>
+</body>
+</html>
