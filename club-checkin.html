@@ -29,7 +29,7 @@
       <a id="open">Open Shuttls</a>
       <a id="ios" class="store" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633">Get Shuttls for iPhone</a>
       <a id="android" class="store" href="https://play.google.com/store/apps/details?id=com.shuttls.android">Get Shuttls for Android</a>
-      <p class="hint">Just installed? Come back here and tap Open Shuttls, or scan the club QR again.</p>
+      <p class="hint">Just installed? Open Shuttls &mdash; your check-in will be waiting after you sign up. If not, come back here and tap Open Shuttls, or scan the club QR again.</p>
     </div>
     <noscript><p>Enable JavaScript to open your club check-in.</p></noscript>
   </main>
@@ -54,6 +54,13 @@
         document.getElementById('open').href = app;
         if (ios) document.getElementById('android').hidden = true;
       }
+      // The App Store can't carry this club across an install, so hand it over through the
+      // clipboard when they tap a store button. On first launch Shuttls reads the link back
+      // and drops them straight into this club's check-in once they've signed up.
+      const remember = () => { try { navigator.clipboard.writeText(app).catch(() => {}); } catch (e) {} };
+      document.querySelectorAll('.store').forEach((a) => a.addEventListener('click', remember));
+      document.getElementById('description').textContent =
+        'Get the free Shuttls app once. We’ll bring you straight back to check in.';
       // Browsers may require a user gesture. Keep Open Shuttls and the store
       // fallback visible; never send a successfully opened app to a timed store redirect.
       if (ios) location.replace(app);
