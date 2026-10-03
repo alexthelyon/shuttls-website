@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shuttls — Run your badminton club. Track every game.</title>
-  <meta name="description" content="Shuttls is the badminton app for clubs and groups: scan-to-check-in, payments and memberships, club discovery, live scoring, player stats and a club ladder. Free on the App Store.">
+  <meta name="description" content="Shuttls is the badminton app for clubs and players: scan-to-check-in, payments and memberships, club night court management, reports, club discovery, live scoring and stats. Free on the App Store.">
   <meta name="theme-color" content="#0A0908">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Shuttls — Run your badminton club. Track every game.">
-  <meta property="og:description" content="Scan-to-check-in, payments, memberships, live scoring and a club ladder — one app for your whole club night.">
+  <meta property="og:description" content="Scan-to-check-in, payments, memberships, club night courts and a club ladder — one app for your whole club night.">
   <meta property="og:image" content="https://alexthelyon.github.io/shuttls-website/app-icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="app-icon.png">
@@ -28,13 +28,13 @@
 </head>
 <body>
 
-<!-- Icon sprite -->
+<!-- Icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M18.71,19.5c-.83,1.24-1.71,2.45-3.1,2.48-1.37.03-1.81-.79-3.38-.79-1.58,0-2.07.77-3.39.82-1.32.05-2.32-1.32-3.15-2.54C4.0,17.0,2.71,12.45,4.47,9.38c.87-1.52,2.43-2.48,4.12-2.51,1.28-.02,2.5.87,3.29.87.78,0,2.26-1.07,3.81-.91.65.03,2.47.26,3.64,1.98-.09.06-2.17,1.26-2.15,3.77.02,3.02,2.6,4.03,2.63,4.04-.03.06-.53,1.2-1.31,2.36ZM15.25,5.18c.7-.84,1.16-2.01,1.03-3.18-1.01.04-2.23.67-2.95,1.52-.64.75-1.21,1.95-1.06,3.09,1.3.1,2.36-.54,2.98-.43Z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h3M20 17v4"/></g></symbol>
   <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
-  <symbol id="i-bolt"viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path fill="currentColor" d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8z"/></symbol>
   <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.39-2.92 5.61-1.77 1.22-4.11 1.65-6.19 1.05-2.08-.6-3.8-2.18-4.5-4.17-.7-1.99-.48-4.28.61-6.09 1.08-1.81 2.95-3 5.09-3.21.36-.04.72-.05 1.09-.07v4.06c-1.55.15-2.92 1.3-3.32 2.81-.4 1.5.07 3.12 1.25 4.15 1.18 1.03 2.91 1.34 4.35.79 1.44-.55 2.45-1.97 2.54-3.53.09-1.57.06-2.58.06-4.16V.02z"/></symbol>
   <symbol id="i-insta" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
 </svg>
@@ -46,8 +46,7 @@
     <nav class="nav-links" aria-label="Sections">
       <a href="#how">How it works</a>
       <a href="#clubs">For clubs</a>
-      <a href="#discover">Discover</a>
-      <a href="#play">Track &amp; compete</a>
+      <a href="#players">For players</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="https://apps.apple.com/gb/app/shuttls/id6756201633" class="btn btn-gold" target="_blank" rel="noopener">
@@ -67,11 +66,11 @@
       <p class="lede reveal d2">Shuttls checks players in with a scan, takes payment, tracks memberships and who&rsquo;s on court &mdash; then gives every player their stats, rank and a club ladder to chase.</p>
       <div class="cta reveal d3">
         <a href="https://apps.apple.com/gb/app/shuttls/id6756201633" class="btn btn-gold" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg>Download on the App Store</a>
-        <a href="#contact" class="btn btn-line">Set up my club</a>
+        <a href="#clubs" class="btn btn-line">See what clubs get</a>
       </div>
-      <div class="hero-facts reveal d3">
-        <span><svg><use href="#i-check"/></svg>No app? The QR page walks players through it</span>
-        <span><svg><use href="#i-check"/></svg>Apple Pay, cash or pay later</span>
+      <div class="audience reveal d3">
+        <a href="#clubs"><b>Run a club?</b><span>Check-in, payments, memberships, reports &rarr;</span></a>
+        <a href="#players"><b>Just play?</b><span>Find clubs, score games, climb the ladder &rarr;</span></a>
       </div>
     </div>
 
@@ -102,21 +101,8 @@
               <div class="mbtn"><svg><use href="#i-card"/></svg><span>Memberships available</span><i>&rsaquo;</i></div>
             </div>
           </div>
-          <!-- 3 membership -->
+          <!-- 3 free (after joining a membership) -->
           <div class="state" data-s="2">
-            <div class="label gold" style="margin-bottom:8px">Memberships</div>
-            <h3 class="mem-title">Play more,<br>pay less.</h3>
-            <p class="mem-sub">Skip the £6.00 door price and walk straight in next time.</p>
-            <div class="plan" style="margin-top:16px">
-              <span class="label gold">Monthly plan</span>
-              <span class="num">£28<small> / month</small></span>
-              <small>4 sessions included &middot; extras discounted</small>
-            </div>
-            <div class="pbtn" style="margin-top:14px"><svg><use href="#i-apple"/></svg>Join with Apple Pay</div>
-            <div class="pmini" style="margin-top:12px">Prefer not to? Close this and check in for £6.00.</div>
-          </div>
-          <!-- 4 free -->
-          <div class="state" data-s="3">
             <div class="sheet-head">🏸</div>
             <div class="sheet-body">
               <h3>Northside Badminton</h3>
@@ -127,8 +113,8 @@
               <div class="pbtn">Check in</div>
             </div>
           </div>
-          <!-- 5 done -->
-          <div class="state" data-s="4">
+          <!-- 4 done -->
+          <div class="state" data-s="3">
             <div class="done">
               <div class="tick"><svg><use href="#i-check"/></svg></div>
               <h3>You&rsquo;re checked in</h3>
@@ -142,9 +128,8 @@
       <div class="stepper" role="tablist" aria-label="Check-in steps">
         <button class="on" data-go="0" role="tab">Scan</button>
         <button data-go="1" role="tab">Confirm</button>
-        <button data-go="2" role="tab">Membership</button>
-        <button data-go="3" role="tab">Free</button>
-        <button data-go="4" role="tab">Play</button>
+        <button data-go="2" role="tab">Free</button>
+        <button data-go="3" role="tab">Play</button>
       </div>
     </div>
   </div>
@@ -171,29 +156,36 @@
       <p class="lede reveal d2">Print one QR code. Every session after that runs itself &mdash; new faces and regulars alike.</p>
     </div>
     <ol class="flow flow-wrap">
-      <li class="reveal"><h3>Scan the club QR</h3><p>Pinned on the wall, shared in your group chat, or printed from the app. One stable code, every session.</p></li>
+      <li class="reveal"><h3>Scan the club QR</h3><p>Pinned on the wall, shared in your group chat, or printed from the app. One code, every session.</p></li>
       <li class="reveal d1"><h3>Check in</h3><p>New players join the club as they check in. Members covered by a plan skip the screen entirely.</p></li>
       <li class="reveal d2"><h3>Pay how they like</h3><p>Apple Pay in one tap, cash on the night, or settle up later. Not a member? Players can pick up a membership right there, then check in free.</p></li>
-      <li class="reveal d3"><h3>You see it all</h3><p>Attendance, balances and who still owes you &mdash; tracked automatically for admins as people arrive.</p></li>
+      <li class="reveal d3"><h3>You see it all</h3><p>Attendance, balances and who still owes you &mdash; tracked automatically as people arrive.</p></li>
     </ol>
   </div>
 </section>
 
-<!-- FOR CLUBS -->
-<section id="clubs" class="rule">
+<!-- ═══════════════ FOR CLUBS ═══════════════ -->
+<section id="clubs" class="rule zone">
   <div class="wrap">
     <div class="head">
-      <span class="label gold reveal">For clubs &amp; groups</span>
+      <span class="tag reveal">For clubs &amp; organisers</span>
       <h2 class="display reveal d1">Everything an organiser<br>was doing by hand.</h2>
-      <p class="lede reveal d2">Sessions, money, memberships and capacity &mdash; set it up once and let Shuttls keep the books.</p>
+      <p class="lede reveal d2">Sessions, money, memberships and who&rsquo;s on court &mdash; set it up once and let Shuttls keep the books.</p>
     </div>
 
     <div class="bento">
+      <!-- Roster + poster -->
       <article class="card b w4 reveal">
-        <div>
-          <span class="label">Live roster</span>
-          <h3 style="margin-top:10px">See who&rsquo;s in, who&rsquo;s paid, who owes</h3>
-          <p>A running attendance list for every session. Tap through to a player&rsquo;s balance, mark cash, waive a fee, or correct a mistake &mdash; history is never rewritten.</p>
+        <div class="roster-top">
+          <div>
+            <span class="label">Live roster</span>
+            <h3 style="margin-top:10px">See who&rsquo;s in, who&rsquo;s paid, who owes</h3>
+            <p>A running attendance list for every session. Tap through to a player&rsquo;s balance, mark cash, waive a fee, or fix a mistake &mdash; the history always stays intact.</p>
+          </div>
+          <div class="poster">
+            <svg class="qr-mini qrsvg" viewBox="0 0 25 25" data-seed="21"></svg>
+            <div class="t">Scan.<br>Check in.<br><span class="gold">Play.</span></div>
+          </div>
         </div>
         <div class="viz rows">
           <div class="row"><span class="av">AK</span><span class="grow">Amira K.</span><span class="chip">Paid &middot; Apple Pay</span><span class="amt">£6.00</span></div>
@@ -201,17 +193,20 @@
           <div class="row"><span class="av">RO</span><span class="grow">Ravi O.</span><span class="chip mute">Pay later</span><span class="amt">£6.00</span></div>
           <div class="row"><span class="av">SL</span><span class="grow">Sam L.</span><span class="chip">Cash</span><span class="amt">£6.00</span></div>
         </div>
+        <p class="fine">Print the poster once, or share the link in your group chat.</p>
       </article>
 
+      <!-- Memberships -->
       <article class="card b reveal d1">
         <div>
-          <span class="label">Check-in poster</span>
-          <h3 style="margin-top:10px">Print once, use forever</h3>
-          <p>Your QR as a ready-to-print poster, or a share link for the group chat.</p>
+          <span class="label">Memberships</span>
+          <h3 style="margin-top:10px">Plans that bill themselves</h3>
+          <p>Offer weekly, monthly or yearly plans with sessions included. Players join in a tap right from check-in.</p>
         </div>
-        <div class="viz poster">
-          <svg class="qr-mini qrsvg" viewBox="0 0 25 25" data-seed="21"></svg>
-          <div class="t">Scan.<br>Check in.<br><span class="gold">Play.</span></div>
+        <div class="viz plans">
+          <div class="pl-row"><div><b>Yearly plan</b><small>Unlimited sessions</small></div><span class="num">£260<small> / yr</small></span></div>
+          <div class="pl-row hot"><div><b>Monthly plan</b><small>4 sessions included</small></div><span class="num">£28<small> / mo</small></span></div>
+          <div class="pl-row"><div><b>Weekly plan</b><small>1 session a week</small></div><span class="num">£8<small> / wk</small></span></div>
         </div>
       </article>
 
@@ -219,29 +214,16 @@
         <div>
           <span class="label">Payments</span>
           <h3 style="margin-top:10px">Get paid without chasing</h3>
-          <p>Connect Stripe and take card and Apple Pay straight to your club&rsquo;s account. Cash and pay-later stay on the ledger.</p>
+          <p>Take card and Apple Pay straight into your club&rsquo;s account. Cash and pay-later are tracked too, so nothing slips through.</p>
         </div>
         <div class="viz pay-opts"><span class="chip"><svg width="12" height="12"><use href="#i-apple"/></svg>Apple Pay</span><span class="chip">Card</span><span class="chip mute">Cash</span><span class="chip mute">Pay later</span></div>
       </article>
 
       <article class="card b reveal d1">
         <div>
-          <span class="label">Memberships</span>
-          <h3 style="margin-top:10px">Plans that bill themselves</h3>
-          <p>Weekly to yearly, with a session allowance and a discount beyond it. Passes, packs and renewals handled.</p>
-        </div>
-        <div class="viz plan">
-          <span class="label gold">Monthly plan</span>
-          <span class="num">£28<small> / month</small></span>
-          <small>4 sessions included &middot; extra sessions discounted</small>
-        </div>
-      </article>
-
-      <article class="card b reveal d2">
-        <div>
           <span class="label">Capacity</span>
           <h3 style="margin-top:10px">Never over-book the hall</h3>
-          <p>Set spots per session and club size. Choose tap-to-check-in or door-QR only.</p>
+          <p>Set spots per session and a club size. Choose whether players can check in from the app or must scan at the door.</p>
         </div>
         <div class="viz">
           <div class="meter"><i style="width:75%"></i></div>
@@ -249,71 +231,193 @@
         </div>
       </article>
 
-      <article class="card b w3 reveal">
+      <article class="card b reveal d2">
         <div>
-          <span class="label live"><span class="chip red"><span class="dot"></span>Live</span></span>
-          <h3 style="margin-top:12px">Club night, on the courts</h3>
-          <p>Run courts and matches from the app. Scores feed straight into each player&rsquo;s stats and your club&rsquo;s ladder.</p>
-        </div>
-        <div class="viz courts">
-          <div class="court"><div class="t"><span class="label">Court 1</span><span class="chip red live"><span class="dot"></span>Live</span></div><div class="sc"><span>Amira / Sam</span><b class="lead">14</b></div><div class="sc"><span>Jamie / Ravi</span><b>11</b></div></div>
-          <div class="court"><div class="t"><span class="label">Court 2</span><span class="chip red live"><span class="dot"></span>Live</span></div><div class="sc"><span>Priya / Ben</span><b>8</b></div><div class="sc"><span>Lee / Zoe</span><b class="lead">12</b></div></div>
-        </div>
-      </article>
-
-      <article class="card b w3 reveal d1">
-        <div>
-          <span class="label">Expenses</span>
+          <span class="label">Costs</span>
           <h3 style="margin-top:10px">Know what a night actually costs</h3>
-          <p>Log court hire and shuttles, see totals against what you collected, and split costs without a calculator.</p>
+          <p>Log court hire and shuttles, split them with the group, and see costs against what you collected.</p>
         </div>
         <div class="viz rows">
-          <div class="row"><span class="grow">Court hire &middot; 4 courts</span><span class="amt">£48.00</span></div>
-          <div class="row"><span class="grow">Shuttles &middot; 2 tubes</span><span class="amt">£22.00</span></div>
-          <div class="row" style="background:var(--gold-wash)"><span class="grow gold"><b>Collected tonight</b></span><span class="amt gold">£96.00</span></div>
+          <div class="row"><span class="grow">Court hire</span><span class="amt">£48.00</span></div>
+          <div class="row"><span class="grow">Shuttles</span><span class="amt">£22.00</span></div>
+          <div class="row" style="background:var(--gold-wash)"><span class="grow gold"><b>Left over</b></span><span class="amt gold">£26.00</span></div>
         </div>
       </article>
     </div>
-    <p class="fine reveal" style="margin-top:18px">Names and figures above are illustrative.</p>
-  </div>
-</section>
+    <p class="fine reveal" style="margin-top:18px">Names and figures are illustrative.</p>
 
-<!-- DISCOVER -->
-<section id="discover" class="rule">
-  <div class="wrap split">
-    <div class="copy">
-      <span class="label gold reveal">Club discovery</span>
-      <h2 class="display reveal d1">Find a club.<br>Or fill yours.</h2>
-      <p class="lede reveal d2">New to an area, or growing a group? Shuttls puts clubs on the map so players can find a court and organisers can be found.</p>
-      <ul class="ticks reveal d3">
-        <li><svg><use href="#i-check"/></svg><span><b>Nearby clubs on a map</b> &mdash; see who plays where, and when.</span></li>
-        <li><svg><use href="#i-check"/></svg><span><b>Join by invite, PIN or QR</b> &mdash; open to everyone, or private to your group.</span></li>
-        <li><svg><use href="#i-check"/></svg><span><b>Announcements and a bulletin board</b> &mdash; session changes reach everyone, with reactions.</span></li>
-        <li><svg><use href="#i-check"/></svg><span><b>Friends by QR</b> &mdash; connect with a scan and share session updates.</span></li>
-      </ul>
-    </div>
-    <div class="mockcard reveal d2">
-      <div class="top"><span class="label">Nearby clubs</span><span class="chip mute">Within 5 mi</span></div>
-      <div class="map" aria-hidden="true">
-        <span class="road" style="left:0;right:0;top:38%;height:3px;transform:rotate(-4deg)"></span>
-        <span class="road" style="top:0;bottom:0;left:58%;width:3px;transform:rotate(7deg)"></span>
-        <span class="road" style="left:0;right:0;top:78%;height:2px;transform:rotate(3deg)"></span>
-        <span class="pin" style="left:22%;top:26%"><span>🏸</span></span>
-        <span class="pin" style="left:66%;top:18%"><span>🏸</span></span>
-        <span class="pin dim" style="left:76%;top:56%"><span>🏸</span></span>
-        <span class="pin dim" style="left:12%;top:62%"><span>🏸</span></span>
-        <span class="me" style="left:46%;top:54%"></span>
+    <!-- CLUB NIGHT (animated) -->
+    <div class="split night">
+      <div class="copy">
+        <span class="label gold reveal">Club night</span>
+        <h2 class="display reveal d1">Courts that run<br>themselves.</h2>
+        <p class="lede reveal d2">See every court at a glance. When a game ends, the winners are crowned, the next four step up from the waiting list, and everyone&rsquo;s stats update.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>Fair games, fast</b> &mdash; let Shuttls pick the next four, or place players yourself.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Nobody left standing around</b> &mdash; a live waiting list keeps the queue honest.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Every result counts</b> &mdash; scores feed player stats and your club ladder.</span></li>
+        </ul>
       </div>
-      <div class="clubrow"><span class="em">🏸</span><div><b>Northside Badminton</b><small>0.4 mi &middot; Tuesdays &amp; Thursdays</small></div><span class="chip">Joined</span></div>
-      <div class="clubrow"><span class="em">🏸</span><div><b>Westside Smash Club</b><small>1.2 mi &middot; Sundays</small></div><span class="chip mute">Join</span></div>
+      <div class="cn reveal d2" id="cn" aria-label="Animated example of a club night: two courts, winners crowned, next players called up from the waiting list">
+        <div class="cn-head">
+          <span class="label">Tuesday club night</span>
+          <span class="chip red live"><span class="dot"></span>Live</span>
+        </div>
+        <div class="cn-stage">
+          <div class="cn-courts">
+            <div class="cn-court" data-c="0">
+              <div class="cn-ct"><span class="label">Court 1</span></div>
+              <div class="cn-match">
+                <div class="team" data-c="0" data-t="A"><span class="crown"><svg><use href="#i-crown"/></svg></span><span class="slot" data-i="0"></span><span class="slot" data-i="1"></span></div>
+                <div class="cn-score"><b class="sc" data-c="0" data-t="A">0</b><em>:</em><b class="sc" data-c="0" data-t="B">0</b></div>
+                <div class="team" data-c="0" data-t="B"><span class="crown"><svg><use href="#i-crown"/></svg></span><span class="slot" data-i="0"></span><span class="slot" data-i="1"></span></div>
+              </div>
+            </div>
+            <div class="cn-court" data-c="1">
+              <div class="cn-ct"><span class="label">Court 2</span></div>
+              <div class="cn-match">
+                <div class="team" data-c="1" data-t="A"><span class="crown"><svg><use href="#i-crown"/></svg></span><span class="slot" data-i="0"></span><span class="slot" data-i="1"></span></div>
+                <div class="cn-score"><b class="sc" data-c="1" data-t="A">0</b><em>:</em><b class="sc" data-c="1" data-t="B">0</b></div>
+                <div class="team" data-c="1" data-t="B"><span class="crown"><svg><use href="#i-crown"/></svg></span><span class="slot" data-i="0"></span><span class="slot" data-i="1"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cn-wait">
+            <div class="cn-wt"><span class="label">Waiting</span><span class="cn-caption" id="cnCaption">Games in progress</span></div>
+            <div class="cn-wgrid">
+              <span class="wslot" data-i="0"></span><span class="wslot" data-i="1"></span><span class="wslot" data-i="2"></span><span class="wslot" data-i="3"></span>
+              <span class="wslot" data-i="4"></span><span class="wslot" data-i="5"></span><span class="wslot" data-i="6"></span><span class="wslot" data-i="7"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPORTS -->
+    <div class="reports">
+      <div class="head" style="margin-bottom:28px">
+        <span class="label gold reveal">Reports</span>
+        <h2 class="display reveal d1" style="font-size:clamp(28px,3.4vw,44px)">Know how your club is doing.</h2>
+        <p class="lede reveal d2">Money in, who turned up, who joined, who&rsquo;s lapsing and who still owes you &mdash; for any month, at a glance.</p>
+      </div>
+      <div class="rep-grid reveal">
+        <div class="card rep-money">
+          <span class="label">Money in &middot; this month</span>
+          <div class="num big">£1,240</div>
+          <div class="mini-tiles">
+            <div><b>£780</b><small>memberships</small></div>
+            <div><b>£460</b><small>sessions</small></div>
+            <div><b>£905</b><small>in the app</small></div>
+            <div><b>£335</b><small>cash &amp; other</small></div>
+          </div>
+          <div class="bars" aria-hidden="true">
+            <i style="height:46%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:71%"></i><i style="height:66%"></i><i class="on" style="height:92%"></i>
+          </div>
+          <div class="bars-x"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+        </div>
+        <div class="card rep-col">
+          <span class="label">Attendance</span>
+          <div class="mini-tiles three">
+            <div><b>212</b><small>visits</small></div>
+            <div><b>64</b><small>players</small></div>
+            <div><b>14.1</b><small>per session</small></div>
+          </div>
+          <div class="split-bar"><i style="width:68%"></i></div>
+          <div class="meter-cap"><span>144 member visits</span><span class="dim">68 walk-ins</span></div>
+          <p class="fine">Busiest: Tuesday club night &middot; 31 people</p>
+        </div>
+        <div class="card rep-col">
+          <span class="label">Members</span>
+          <div class="mini-tiles three">
+            <div><b>38</b><small>active now</small></div>
+            <div><b class="gold">+6</b><small>joined</small></div>
+            <div><b>2</b><small>lapsed</small></div>
+          </div>
+          <div class="note"><svg><use href="#i-check"/></svg>3 memberships ending this week &mdash; send a reminder</div>
+        </div>
+        <div class="card rep-col">
+          <span class="label">Costs &amp; net</span>
+          <div class="mini-tiles">
+            <div><b>£310</b><small>costs</small></div>
+            <div><b class="gold">£930</b><small>left over</small></div>
+          </div>
+          <div class="owed"><span class="label">Still owed</span><b>£42</b><small>3 people &middot; tap to remind</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LADDER -->
+    <div class="split rank-block">
+      <div class="mockcard reveal">
+        <div class="top"><span class="label">Northside leaderboard</span><span class="chip">This month</span></div>
+        <div class="lb">
+          <div class="row"><span class="pos">1</span><span class="av">AK</span><span class="grow">Amira K.</span><span class="amt gold">4,210 XP</span></div>
+          <div class="row"><span class="pos">2</span><span class="av">SL</span><span class="grow">Sam L.</span><span class="amt">3,890 XP</span></div>
+          <div class="row"><span class="pos">3</span><span class="av">JT</span><span class="grow">Jamie T.</span><span class="amt">3,440 XP</span></div>
+        </div>
+      </div>
+      <div class="copy reveal d1">
+        <span class="label gold">Keep them coming back</span>
+        <h3 class="display" style="font-size:clamp(26px,3vw,38px)">Give your members something to play for.</h3>
+        <p class="lede">Club-only wins, losses and rankings turn a regular night into a season. Players check out with their record for the evening &mdash; and a reason to come back next week.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TRACK & COMPETE -->
-<section id="play" class="rule">
+<!-- ═══════════════ FOR PLAYERS ═══════════════ -->
+<section id="players" class="rule zone">
   <div class="wrap">
+    <div class="head">
+      <span class="tag reveal">For players</span>
+      <h2 class="display reveal d1">Find your club.<br>Track your game.</h2>
+      <p class="lede reveal d2">Join clubs near you, score your matches and watch your game improve.</p>
+    </div>
+
+    <!-- DISCOVER + NOTICE BOARD -->
     <div class="split">
+      <div class="copy">
+        <span class="label gold reveal">Club discovery</span>
+        <h3 class="display reveal d1" style="font-size:clamp(28px,3.4vw,44px)">Always know what&rsquo;s happening at your club.</h3>
+        <p class="lede reveal d2">Find clubs near you and join with a scan, a code or an invite. Then follow everything on the club notice board &mdash; session changes, results and news, with reactions from the whole group.</p>
+        <div class="board reveal d3" id="board" aria-label="Animated example of a club notice board with new posts and reactions">
+          <div class="board-head"><span class="label">Northside notice board</span><span class="chip">3 new</span></div>
+          <div class="post" data-p="0">
+            <span class="av">NB</span>
+            <div><b>Northside Badminton</b><small>Just now</small><p>📌 Court 3 is back tonight &mdash; doors open at 7:15.</p>
+              <div class="reacts"><span class="rx" data-n="6">👍 <u>0</u></span><span class="rx" data-n="3">🙌 <u>0</u></span></div></div>
+          </div>
+          <div class="post" data-p="1">
+            <span class="av">SL</span>
+            <div><b>Sam L.</b><small>2 min ago</small><p>Friendly vs Westside this Sunday &mdash; 8 spots, who&rsquo;s in?</p>
+              <div class="reacts"><span class="rx" data-n="9">🔥 <u>0</u></span><span class="rx" data-n="4">💪 <u>0</u></span></div></div>
+          </div>
+          <div class="post" data-p="2">
+            <span class="av">AK</span>
+            <div><b>Amira K.</b><small>5 min ago</small><p>10 wins in a row! 🏆 Thanks for the games, everyone.</p>
+              <div class="reacts"><span class="rx" data-n="12">👏 <u>0</u></span><span class="rx" data-n="7">🎉 <u>0</u></span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">Nearby clubs</span><span class="chip mute">Within 5 mi</span></div>
+        <div class="map" aria-hidden="true">
+          <span class="road" style="left:0;right:0;top:38%;height:3px;transform:rotate(-4deg)"></span>
+          <span class="road" style="top:0;bottom:0;left:58%;width:3px;transform:rotate(7deg)"></span>
+          <span class="road" style="left:0;right:0;top:78%;height:2px;transform:rotate(3deg)"></span>
+          <span class="pin" style="left:22%;top:26%"><span>🏸</span></span>
+          <span class="pin" style="left:66%;top:18%"><span>🏸</span></span>
+          <span class="pin dim" style="left:76%;top:56%"><span>🏸</span></span>
+          <span class="pin dim" style="left:12%;top:62%"><span>🏸</span></span>
+          <span class="me" style="left:46%;top:54%"></span>
+        </div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Northside Badminton</b><small>0.4 mi &middot; Tuesdays &amp; Thursdays</small></div><span class="chip">Joined</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Westside Smash Club</b><small>1.2 mi &middot; Sundays</small></div><span class="chip mute">Join</span></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="split" style="margin-top:clamp(72px,9vw,120px)">
       <div class="mockcard scoreboard reveal">
         <div class="top"><span class="label">Singles &middot; Game 2</span><span class="chip">+28 XP</span></div>
         <div class="sb-main">
@@ -321,15 +425,9 @@
           <div class="sep">&ndash;</div>
           <div><div class="n">17</div><small>Them</small></div>
         </div>
-        <svg class="spark" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="gfill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C9A961" stop-opacity=".28"/><stop offset="1" stop-color="#C9A961" stop-opacity="0"/></linearGradient></defs>
-          <g stroke="#36311F" stroke-width="1"><line x1="0" x2="300" y1="30" y2="30"/><line x1="0" x2="300" y1="60" y2="60"/><line x1="0" x2="300" y1="90" y2="90"/></g>
-          <path d="M0 118 L20 112 40 104 60 100 80 88 100 84 120 70 140 64 160 52 180 46 200 34 230 28 260 16 300 6 V120 H0Z" fill="url(#gfill)"/>
-          <polyline points="0,118 20,112 40,104 60,100 80,88 100,84 120,70 140,64 160,52 180,46 200,34 230,28 260,16 300,6" fill="none" stroke="#C9A961" stroke-width="2.4" stroke-linejoin="round"/>
-          <polyline points="0,118 25,114 55,108 85,102 115,92 150,84 185,72 215,62 250,48 300,34" fill="none" stroke="#727983" stroke-width="2" stroke-dasharray="4 4" stroke-linejoin="round"/>
-        </svg>
+        <img class="appshot" src="score-progression.jpg" width="1000" height="701" alt="Score progression graph from the Shuttls app, showing a 21–17 win with hot and cold streaks" loading="lazy">
         <div class="tiles">
-          <div class="tile"><span class="num">87%</span><small>Win rate</small></div>
+          <div class="tile"><span class="num">12.1G</span><small>Wrist power</small></div>
           <div class="tile"><span class="num">148</span><small>Avg bpm</small></div>
           <div class="tile"><span class="num">620</span><small>kcal</small></div>
         </div>
@@ -337,15 +435,16 @@
       <div class="copy">
         <span class="label gold reveal">Game &amp; stat tracking</span>
         <h2 class="display reveal d1">Every point,<br>every match.</h2>
-        <p class="lede reveal d2">Tap to score singles or doubles. Shuttls turns each game into a score progression, win rate and effort data you can look back on.</p>
+        <p class="lede reveal d2">Tap to score singles or doubles. Shuttls turns each game into a score progression with hot and cold streaks, plus the effort data behind it.</p>
         <ul class="ticks reveal d3">
           <li><svg><use href="#i-check"/></svg><span><b>Live scoring</b> &mdash; singles, doubles, best-of-three.</span></li>
-          <li><svg><use href="#i-check"/></svg><span><b>Match history</b> &mdash; synced, searchable, never on paper.</span></li>
-          <li><svg><use href="#i-check"/></svg><span><b>Performance stats</b> &mdash; win rate, XP, and heart rate with Apple Watch.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Match history</b> &mdash; saved, searchable, never on paper.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Performance stats</b> &mdash; wrist power, heart rate and calories with Apple Watch.</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- WATCH -->
     <div class="split flip" style="margin-top:clamp(72px,9vw,120px)">
       <div class="copy">
         <span class="label gold reveal">On your wrist</span>
@@ -367,6 +466,7 @@
       </div>
     </div>
 
+    <!-- COMPETE -->
     <div style="margin-top:clamp(72px,9vw,120px)">
       <div class="head center">
         <span class="label gold reveal">Compete</span>
@@ -388,21 +488,6 @@
         <span class="tier"><i></i>Elite</span>
         <span class="tier"><i></i>Mythic</span>
         <span class="tier top"><i></i>Immortal</span>
-      </div>
-
-      <div class="split" style="margin-top:56px;align-items:start">
-        <div class="mockcard reveal">
-          <div class="top"><span class="label">Northside leaderboard</span><span class="chip">This month</span></div>
-          <div class="lb">
-            <div class="row"><span class="pos">1</span><span class="av">AK</span><span class="grow">Amira K.</span><span class="amt gold">4,210 XP</span></div>
-            <div class="row"><span class="pos">2</span><span class="av">SL</span><span class="grow">Sam L.</span><span class="amt">3,890 XP</span></div>
-            <div class="row"><span class="pos">3</span><span class="av">JT</span><span class="grow">Jamie T.</span><span class="amt">3,440 XP</span></div>
-          </div>
-        </div>
-        <div class="copy reveal d1">
-          <h3 class="display" style="font-size:clamp(26px,3vw,36px)">Give your members something to play for.</h3>
-          <p class="lede">Club-only wins, losses and rankings turn a regular night into a season. Players check out with their record for the evening &mdash; and a reason to come back next week.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -437,11 +522,11 @@
       </details>
       <details>
         <summary>Is Shuttls free?</summary>
-        <p>Players can download Shuttls free on the App Store. If you take online payments, they&rsquo;re processed by Stripe, whose card fees apply.</p>
+        <p>Players can download Shuttls free on the App Store. If you take card payments, the payment provider&rsquo;s normal card fees apply.</p>
       </details>
       <details>
         <summary>How do I get paid?</summary>
-        <p>Connect a Stripe account in the club&rsquo;s settings. Players can pay with Apple Pay or card at check-in, or take out a membership plan. Prefer cash? Players pick &ldquo;pay later or cash&rdquo; and you mark it off on the roster.</p>
+        <p>Connect your club&rsquo;s payment account in the app. Players can pay with Apple Pay or card at check-in, or take out a membership. Prefer cash? Players pick &ldquo;pay later or cash&rdquo; and you mark it off on the roster.</p>
       </details>
       <details>
         <summary>What if my club is full?</summary>
@@ -449,7 +534,7 @@
       </details>
       <details>
         <summary>Can I keep check-in to people actually at the venue?</summary>
-        <p>Yes. Turn off tap-to-check-in and players have to scan the QR at the door.</p>
+        <p>Yes. Turn off check-in from the app and players have to scan the QR at the door.</p>
       </details>
       <details>
         <summary>Is there an Android app?</summary>
@@ -511,6 +596,9 @@
 </footer>
 
 <script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
   // Sticky nav
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 24);
@@ -533,13 +621,115 @@
     svg.innerHTML = `<g fill="#0A0908" shape-rendering="crispEdges"><path d="${d}"/>${f(0,0)}${f(18,0)}${f(0,18)}</g>`;
   });
 
+  // Run a looping animation only while it's on screen
+  function whenVisible(el, start) {
+    let gen = 0;
+    new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { const my = ++gen; start(() => gen !== my); } else { gen++; }
+    }), { threshold: 0.35 }).observe(el);
+  }
+
   // Check-in demo stepper
   const states = [...document.querySelectorAll('.state')], btns = [...document.querySelectorAll('.stepper button')];
   let cur = 0, timer;
   const show = (i) => { cur = i; states.forEach((s, n) => s.classList.toggle('on', n === i)); btns.forEach((b, n) => b.classList.toggle('on', n === i)); };
-  const auto = () => { clearInterval(timer); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => show((cur + 1) % states.length), 3800); };
+  const auto = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => show((cur + 1) % states.length), 3800); };
   btns.forEach((b) => b.addEventListener('click', () => { show(+b.dataset.go); auto(); }));
   auto();
+
+  // ── Club night: two courts, crowns, waiting list rotation ──
+  (function () {
+    const root = document.getElementById('cn'); if (!root) return;
+    const stage = root.querySelector('.cn-stage'), caption = document.getElementById('cnCaption');
+    const names = ['Amira','Sam','Jamie','Ravi','Priya','Ben','Lee','Zoe','Maya','Omar','Chloe','Dev','Nina','Tom','Aiko','Luis'];
+    const pls = names.map((n) => {
+      const el = document.createElement('div'); el.className = 'pl';
+      el.innerHTML = `<i>${n[0]}</i><span>${n}</span>`; stage.appendChild(el); return el;
+    });
+    let courts, queue;
+    const reset = () => {
+      courts = [{ A: [0, 1], B: [2, 3] }, { A: [4, 5], B: [6, 7] }];
+      queue = [8, 9, 10, 11, 12, 13, 14, 15];
+      root.querySelectorAll('.team').forEach((t) => t.classList.remove('win'));
+      root.querySelectorAll('.sc').forEach((s) => (s.textContent = '0'));
+      caption.textContent = 'Games in progress';
+    };
+    const slotPos = (el) => { const r = el.getBoundingClientRect(), s = stage.getBoundingClientRect(); return `translate(${r.left - s.left}px,${r.top - s.top}px)`; };
+    const put = (p, el, playing) => { pls[p].style.transform = slotPos(el); pls[p].classList.toggle('on', playing); };
+    const place = () => {
+      courts.forEach((c, ci) => ['A', 'B'].forEach((t) => c[t].forEach((p, i) =>
+        put(p, stage.querySelector(`.team[data-c="${ci}"][data-t="${t}"] .slot[data-i="${i}"]`), true))));
+      queue.forEach((p, i) => put(p, stage.querySelector(`.wslot[data-i="${i}"]`), false));
+    };
+    const team = (c, t) => stage.querySelector(`.team[data-c="${c}"][data-t="${t}"]`);
+    const score = (c, t, v) => (stage.querySelector(`.sc[data-c="${c}"][data-t="${t}"]`).textContent = v);
+    const rotate = (c) => {
+      const done = [...courts[c].A, ...courts[c].B], next = queue.splice(0, 4);
+      courts[c] = { A: [next[0], next[1]], B: [next[2], next[3]] };
+      queue.push(...done); place();
+    };
+    // play a game to 21 with the winner decided up front
+    async function game(c, winner, loserPts, ms, stale) {
+      const loser = winner === 'A' ? 'B' : 'A';
+      const seq = Array(21).fill(winner).concat(Array(loserPts).fill(loser));
+      for (let i = seq.length - 2; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [seq[i], seq[j]] = [seq[j], seq[i]]; }
+      const last = seq.lastIndexOf(winner); [seq[last], seq[seq.length - 1]] = [seq[seq.length - 1], seq[last]];
+      const s = { A: 0, B: 0 }; score(c, 'A', 0); score(c, 'B', 0);
+      for (const side of seq) { await sleep(ms); if (stale()) return false; s[side]++; score(c, side, s[side]); }
+      return true;
+    }
+    async function run(stale) {
+      reset(); stage.classList.remove('fade'); place();
+      await sleep(900); if (stale()) return;
+      const g2 = game(1, 'B', 17, 190, stale);
+      if (!(await game(0, 'A', 15, 140, stale))) return;
+      team(0, 'A').classList.add('win'); caption.textContent = 'Winners crowned';
+      await sleep(1700); if (stale()) return;
+      caption.textContent = 'Next four called up'; rotate(0);
+      await sleep(700); team(0, 'A').classList.remove('win'); score(0, 'A', 0); score(0, 'B', 0);
+      game(0, 'B', 12, 210, stale);
+      if (!(await g2)) return;
+      team(1, 'B').classList.add('win'); caption.textContent = 'Winners crowned';
+      await sleep(1700); if (stale()) return;
+      caption.textContent = 'Next four called up'; rotate(1);
+      await sleep(700); team(1, 'B').classList.remove('win'); score(1, 'A', 0); score(1, 'B', 0);
+      await sleep(3400); if (stale()) return;
+      stage.classList.add('fade'); await sleep(600);
+    }
+    addEventListener('resize', () => { if (courts) place(); });
+    reset(); place();
+    if (reduce) { team(0, 'A').classList.add('win'); score(0, 'A', 21); score(0, 'B', 15); score(1, 'A', 17); score(1, 'B', 21); team(1, 'B').classList.add('win'); caption.textContent = 'Winners crowned'; return; }
+    whenVisible(root, async (stale) => { while (!stale()) await run(stale); });
+  })();
+
+  // ── Notice board: new posts arrive, reactions roll in, loops ──
+  (function () {
+    const board = document.getElementById('board'); if (!board) return;
+    const posts = [...board.querySelectorAll('.post')], rx = [...board.querySelectorAll('.rx')], badge = board.querySelector('.board-head .chip');
+    const setCount = (r, n) => { const u = r.querySelector('u'); u.textContent = n; r.classList.toggle('has', n > 0); r.classList.remove('pop'); void r.offsetWidth; if (n > 0) r.classList.add('pop'); };
+    const clear = () => { posts.forEach((p) => p.classList.remove('in')); rx.forEach((r) => setCount(r, 0)); badge.textContent = '0 new'; };
+    if (reduce) { posts.forEach((p) => p.classList.add('in')); rx.forEach((r) => setCount(r, +r.dataset.n)); badge.textContent = '3 new'; return; }
+    clear();
+    whenVisible(board, async (stale) => {
+      while (!stale()) {
+        clear(); await sleep(700);
+        for (let i = 0; i < posts.length; i++) {
+          if (stale()) return;
+          posts[i].classList.add('in'); badge.textContent = `${i + 1} new`; await sleep(900);
+          const mine = rx.filter((r) => r.closest('.post') === posts[i]);
+          const top = Math.max(...mine.map((r) => +r.dataset.n));
+          for (let n = 1; n <= top; n++) {
+            if (stale()) return;
+            mine.forEach((r) => { if (n <= +r.dataset.n) setCount(r, n); });
+            await sleep(170);
+          }
+          await sleep(500);
+        }
+        await sleep(3800); if (stale()) return;
+        posts.forEach((p) => p.classList.remove('in')); await sleep(800);
+      }
+    });
+  })();
 </script>
 </body>
 </html>
