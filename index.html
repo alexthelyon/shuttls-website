@@ -47,8 +47,8 @@
   <div class="wrap">
     <a href="#top" class="nav-logo" aria-label="Shuttls"><img src="logo.png" alt="Shuttls"></a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#clubs">For clubs</a>
       <a href="#players">For players</a>
+      <a href="#clubs">For clubs</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="https://apps.apple.com/gb/app/shuttls/id6756201633" class="btn btn-gold" target="_blank" rel="noopener">
@@ -74,15 +74,147 @@
         <a href="#clubs" class="btn btn-line">See what clubs get</a>
       </div>
       <div class="audience reveal d3">
-        <a href="#clubs"><b>Run a club?</b><span>Check-in, payments, memberships, reports &rarr;</span></a>
         <a href="#players"><b>Just play?</b><span>Find clubs, score games, climb the ladder &rarr;</span></a>
+        <a href="#clubs"><b>Run a club?</b><span>Check-in, payments, memberships, reports &rarr;</span></a>
       </div>
     </div>
   </div>
 </section>
 
+<div class="shuttle-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════ FOR PLAYERS ═══════════════ -->
+<section id="players" class="zone">
+  <div class="wrap">
+    <div class="head center grand">
+      <span class="tag reveal">For players</span>
+      <h2 class="display reveal d1">Your badminton,<br><em>all in one place.</em></h2>
+      <p class="lede reveal d2">Join clubs near you, score your matches and watch your game improve.</p>
+    </div>
+
+    <!-- DISCOVER + NOTICE BOARD -->
+    <div class="split">
+      <div class="copy">
+        <span class="label gold reveal">Club discovery</span>
+        <h3 class="display reveal d1" style="font-size:clamp(28px,3.4vw,44px)">Always know what&rsquo;s happening at your club.</h3>
+        <p class="lede reveal d2">Find clubs near you and join with a scan, a code or an invite. Then follow everything on the club notice board: session changes, results and news, with reactions from the whole group.</p>
+        <div class="board reveal d3" id="board" aria-label="Animated example of a club notice board with new posts and reactions">
+          <div class="board-head"><span class="label">Northside notice board</span><span class="chip">3 new</span></div>
+          <div class="post" data-p="0">
+            <span class="av">NB</span>
+            <div><b>Northside Badminton</b><small>Just now</small><p>📌 Court 3 is back tonight, doors open at 7:15.</p>
+              <div class="reacts"><span class="rx" data-n="6">👍 <u>0</u></span><span class="rx" data-n="3">🙌 <u>0</u></span></div></div>
+          </div>
+          <div class="post" data-p="1">
+            <span class="av">BT</span>
+            <div><b>Billy T</b><small>2 min ago</small><p>Friendly vs Westside this Sunday: 8 spots, who&rsquo;s in?</p>
+              <div class="reacts"><span class="rx" data-n="9">🔥 <u>0</u></span><span class="rx" data-n="4">💪 <u>0</u></span></div></div>
+          </div>
+          <div class="post" data-p="2">
+            <span class="av">NW</span>
+            <div><b>Noah W</b><small>5 min ago</small><p>10 wins in a row! 🏆 Thanks for the games, everyone.</p>
+              <div class="reacts"><span class="rx" data-n="12">👏 <u>0</u></span><span class="rx" data-n="7">🎉 <u>0</u></span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">Nearby clubs</span><span class="chip mute">Within 5 mi</span></div>
+        <div class="map" aria-hidden="true">
+          <span class="road" style="left:0;right:0;top:38%;height:3px;transform:rotate(-4deg)"></span>
+          <span class="road" style="top:0;bottom:0;left:58%;width:3px;transform:rotate(7deg)"></span>
+          <span class="road" style="left:0;right:0;top:78%;height:2px;transform:rotate(3deg)"></span>
+          <span class="pin" style="left:22%;top:26%"><span>🏸</span></span>
+          <span class="pin" style="left:66%;top:18%"><span>🏸</span></span>
+          <span class="pin dim" style="left:76%;top:56%"><span>🏸</span></span>
+          <span class="pin dim" style="left:12%;top:62%"><span>🏸</span></span>
+          <span class="me" style="left:46%;top:54%"></span>
+        </div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Northside Badminton</b><small>0.4 mi &middot; Tuesdays &amp; Thursdays</small></div><span class="chip">Joined</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Westside Smash Club</b><small>1.2 mi &middot; Sundays</small></div><span class="chip mute">Join</span></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="split" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="mockcard scoreboard reveal">
+        <div class="top"><span class="label">Singles &middot; Game 2</span><span class="chip">+28 XP</span></div>
+        <div class="sb-main">
+          <div><div class="n win">21</div><small>You</small></div>
+          <div class="sep">&ndash;</div>
+          <div><div class="n">17</div><small>Them</small></div>
+        </div>
+        <img class="appshot" src="score-progression.jpg" width="1000" height="701" alt="Score progression graph from the Shuttls app, showing a 21–17 win with hot and cold streaks" loading="lazy">
+        <div class="tiles">
+          <div class="tile"><span class="num">12.1G</span><small>Wrist power</small></div>
+          <div class="tile"><span class="num">148</span><small>Avg bpm</small></div>
+          <div class="tile"><span class="num">620</span><small>kcal</small></div>
+        </div>
+      </div>
+      <div class="copy">
+        <span class="label gold reveal">Game &amp; stat tracking</span>
+        <h2 class="display reveal d1">Every point,<br>every match.</h2>
+        <p class="lede reveal d2">Tap to score singles or doubles. Shuttls turns each game into a score progression with hot and cold streaks, plus the effort data behind it.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>Live scoring</b>: singles, doubles, best-of-three.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Match history</b>: saved, searchable, never on paper.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Performance stats</b>: wrist power, heart rate and calories with Apple Watch.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WATCH -->
+    <div class="split flip" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="copy">
+        <span class="label gold reveal">On your wrist</span>
+        <h2 class="display reveal d1">Score from the<br>Apple Watch.</h2>
+        <p class="lede reveal d2">Keep your phone in the bag. Score on the Watch, and heart rate and calories are captured automatically.</p>
+        <p class="fine reveal d3">No Watch? Shuttls is fully featured on iPhone alone.</p>
+      </div>
+      <div class="mockcard watchbox reveal d2" style="justify-content:center;padding:44px 24px;gap:38px">
+        <div class="watch" aria-label="Apple Watch scoring (illustrative)">
+          <div class="face">
+            <div class="them"><span class="num">12</span><small>Them</small></div>
+            <div class="me"><span class="num">15</span><small>Me &middot; ♥ 148</small></div>
+          </div>
+        </div>
+        <div class="rows" style="min-width:150px">
+          <div class="tile"><span class="num gold">165</span><small>Max HR</small></div>
+          <div class="tile"><span class="num">13.0s</span><small>Avg rally</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPETE -->
+    <div style="margin-top:clamp(72px,9vw,120px)">
+      <div class="head center">
+        <span class="label gold reveal">Compete</span>
+        <h2 class="display reveal d1">Climb the ladder.<br>Win the club.</h2>
+        <p class="lede reveal d2">Your Shuttl Score places you in a division that reflects how you really play. Win to climb, and see where you stand in your own club.</p>
+      </div>
+      <div class="ladder reveal" style="justify-content:center">
+        <span class="tier"><i style="--c:#727983"></i>Rookie</span>
+        <span class="tier"><i style="--c:#727983"></i>Iron</span>
+        <span class="tier"><i style="--c:#8F7134"></i>Bronze</span>
+        <span class="tier"><i style="--c:#AEB3BA"></i>Silver</span>
+        <span class="tier"><i></i>Gold</span>
+        <span class="tier"><i></i>Platinum</span>
+        <span class="tier"><i></i>Diamond</span>
+        <span class="tier"><i></i>Master</span>
+        <span class="tier"><i></i>Legend</span>
+        <span class="tier"><i></i>Grandmaster</span>
+        <span class="tier"><i></i>Champion</span>
+        <span class="tier"><i></i>Elite</span>
+        <span class="tier"><i></i>Mythic</span>
+        <span class="tier top"><i></i>Immortal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shuttle-divider" aria-hidden="true"></div>
+
 <!-- ═══════════════ FOR CLUBS ═══════════════ -->
-<section id="clubs" class="rule zone">
+<section id="clubs" class="zone">
   <div class="wrap">
     <div class="head center grand">
       <span class="tag reveal">For clubs &amp; organisers</span>
@@ -346,134 +478,6 @@
         <span class="label gold">Keep them coming back</span>
         <h3 class="display" style="font-size:clamp(26px,3vw,38px)">Give your members something to play for.</h3>
         <p class="lede">Club-only wins, losses and rankings turn a regular night into a season. Players check out with their record for the evening, and a reason to come back next week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ FOR PLAYERS ═══════════════ -->
-<section id="players" class="rule zone">
-  <div class="wrap">
-    <div class="head">
-      <span class="tag reveal">For players</span>
-      <h2 class="display reveal d1">Find your club.<br>Track your game.</h2>
-      <p class="lede reveal d2">Join clubs near you, score your matches and watch your game improve.</p>
-    </div>
-
-    <!-- DISCOVER + NOTICE BOARD -->
-    <div class="split">
-      <div class="copy">
-        <span class="label gold reveal">Club discovery</span>
-        <h3 class="display reveal d1" style="font-size:clamp(28px,3.4vw,44px)">Always know what&rsquo;s happening at your club.</h3>
-        <p class="lede reveal d2">Find clubs near you and join with a scan, a code or an invite. Then follow everything on the club notice board: session changes, results and news, with reactions from the whole group.</p>
-        <div class="board reveal d3" id="board" aria-label="Animated example of a club notice board with new posts and reactions">
-          <div class="board-head"><span class="label">Northside notice board</span><span class="chip">3 new</span></div>
-          <div class="post" data-p="0">
-            <span class="av">NB</span>
-            <div><b>Northside Badminton</b><small>Just now</small><p>📌 Court 3 is back tonight, doors open at 7:15.</p>
-              <div class="reacts"><span class="rx" data-n="6">👍 <u>0</u></span><span class="rx" data-n="3">🙌 <u>0</u></span></div></div>
-          </div>
-          <div class="post" data-p="1">
-            <span class="av">BT</span>
-            <div><b>Billy T</b><small>2 min ago</small><p>Friendly vs Westside this Sunday: 8 spots, who&rsquo;s in?</p>
-              <div class="reacts"><span class="rx" data-n="9">🔥 <u>0</u></span><span class="rx" data-n="4">💪 <u>0</u></span></div></div>
-          </div>
-          <div class="post" data-p="2">
-            <span class="av">NW</span>
-            <div><b>Noah W</b><small>5 min ago</small><p>10 wins in a row! 🏆 Thanks for the games, everyone.</p>
-              <div class="reacts"><span class="rx" data-n="12">👏 <u>0</u></span><span class="rx" data-n="7">🎉 <u>0</u></span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="mockcard reveal d2">
-        <div class="top"><span class="label">Nearby clubs</span><span class="chip mute">Within 5 mi</span></div>
-        <div class="map" aria-hidden="true">
-          <span class="road" style="left:0;right:0;top:38%;height:3px;transform:rotate(-4deg)"></span>
-          <span class="road" style="top:0;bottom:0;left:58%;width:3px;transform:rotate(7deg)"></span>
-          <span class="road" style="left:0;right:0;top:78%;height:2px;transform:rotate(3deg)"></span>
-          <span class="pin" style="left:22%;top:26%"><span>🏸</span></span>
-          <span class="pin" style="left:66%;top:18%"><span>🏸</span></span>
-          <span class="pin dim" style="left:76%;top:56%"><span>🏸</span></span>
-          <span class="pin dim" style="left:12%;top:62%"><span>🏸</span></span>
-          <span class="me" style="left:46%;top:54%"></span>
-        </div>
-        <div class="clubrow"><span class="em">🏸</span><div><b>Northside Badminton</b><small>0.4 mi &middot; Tuesdays &amp; Thursdays</small></div><span class="chip">Joined</span></div>
-        <div class="clubrow"><span class="em">🏸</span><div><b>Westside Smash Club</b><small>1.2 mi &middot; Sundays</small></div><span class="chip mute">Join</span></div>
-      </div>
-    </div>
-
-    <!-- STATS -->
-    <div class="split" style="margin-top:clamp(72px,9vw,120px)">
-      <div class="mockcard scoreboard reveal">
-        <div class="top"><span class="label">Singles &middot; Game 2</span><span class="chip">+28 XP</span></div>
-        <div class="sb-main">
-          <div><div class="n win">21</div><small>You</small></div>
-          <div class="sep">&ndash;</div>
-          <div><div class="n">17</div><small>Them</small></div>
-        </div>
-        <img class="appshot" src="score-progression.jpg" width="1000" height="701" alt="Score progression graph from the Shuttls app, showing a 21–17 win with hot and cold streaks" loading="lazy">
-        <div class="tiles">
-          <div class="tile"><span class="num">12.1G</span><small>Wrist power</small></div>
-          <div class="tile"><span class="num">148</span><small>Avg bpm</small></div>
-          <div class="tile"><span class="num">620</span><small>kcal</small></div>
-        </div>
-      </div>
-      <div class="copy">
-        <span class="label gold reveal">Game &amp; stat tracking</span>
-        <h2 class="display reveal d1">Every point,<br>every match.</h2>
-        <p class="lede reveal d2">Tap to score singles or doubles. Shuttls turns each game into a score progression with hot and cold streaks, plus the effort data behind it.</p>
-        <ul class="ticks reveal d3">
-          <li><svg><use href="#i-check"/></svg><span><b>Live scoring</b>: singles, doubles, best-of-three.</span></li>
-          <li><svg><use href="#i-check"/></svg><span><b>Match history</b>: saved, searchable, never on paper.</span></li>
-          <li><svg><use href="#i-check"/></svg><span><b>Performance stats</b>: wrist power, heart rate and calories with Apple Watch.</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- WATCH -->
-    <div class="split flip" style="margin-top:clamp(72px,9vw,120px)">
-      <div class="copy">
-        <span class="label gold reveal">On your wrist</span>
-        <h2 class="display reveal d1">Score from the<br>Apple Watch.</h2>
-        <p class="lede reveal d2">Keep your phone in the bag. Score on the Watch, and heart rate and calories are captured automatically.</p>
-        <p class="fine reveal d3">No Watch? Shuttls is fully featured on iPhone alone.</p>
-      </div>
-      <div class="mockcard watchbox reveal d2" style="justify-content:center;padding:44px 24px;gap:38px">
-        <div class="watch" aria-label="Apple Watch scoring (illustrative)">
-          <div class="face">
-            <div class="them"><span class="num">12</span><small>Them</small></div>
-            <div class="me"><span class="num">15</span><small>Me &middot; ♥ 148</small></div>
-          </div>
-        </div>
-        <div class="rows" style="min-width:150px">
-          <div class="tile"><span class="num gold">165</span><small>Max HR</small></div>
-          <div class="tile"><span class="num">13.0s</span><small>Avg rally</small></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMPETE -->
-    <div style="margin-top:clamp(72px,9vw,120px)">
-      <div class="head center">
-        <span class="label gold reveal">Compete</span>
-        <h2 class="display reveal d1">Climb the ladder.<br>Win the club.</h2>
-        <p class="lede reveal d2">Your Shuttl Score places you in a division that reflects how you really play. Win to climb, and see where you stand in your own club.</p>
-      </div>
-      <div class="ladder reveal" style="justify-content:center">
-        <span class="tier"><i style="--c:#727983"></i>Rookie</span>
-        <span class="tier"><i style="--c:#727983"></i>Iron</span>
-        <span class="tier"><i style="--c:#8F7134"></i>Bronze</span>
-        <span class="tier"><i style="--c:#AEB3BA"></i>Silver</span>
-        <span class="tier"><i></i>Gold</span>
-        <span class="tier"><i></i>Platinum</span>
-        <span class="tier"><i></i>Diamond</span>
-        <span class="tier"><i></i>Master</span>
-        <span class="tier"><i></i>Legend</span>
-        <span class="tier"><i></i>Grandmaster</span>
-        <span class="tier"><i></i>Champion</span>
-        <span class="tier"><i></i>Elite</span>
-        <span class="tier"><i></i>Mythic</span>
-        <span class="tier top"><i></i>Immortal</span>
       </div>
     </div>
   </div>
