@@ -11,20 +11,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site.css?v=20261004d">
 </head>
 <body class="land">
-  <main>
+  <main id="main">
     <img class="logo-img" src="logo.png" alt="Shuttls">
-    <div class="badge" aria-hidden="true">🏸</div>
-    <h1 class="display" id="title">Ready to play?</h1>
+    <div class="badge" id="badge" aria-hidden="true">🏸</div>
+    <div class="club-logo" id="clubLogo" hidden></div>
+    <div class="tap-top">
+      <span class="tap-chip" id="chip" hidden>Club check-in</span>
+      <h1 class="display" id="title">Ready to play?</h1>
+    </div>
     <p class="lede" id="description">Open Shuttls to check in to your club session.</p>
     <div class="stack" id="actions" hidden>
-      <a id="open" class="btn btn-gold">Open Shuttls</a>
-      <a id="ios" class="btn btn-line" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71,19.5c-.83,1.24-1.71,2.45-3.1,2.48-1.37.03-1.81-.79-3.38-.79-1.58,0-2.07.77-3.39.82-1.32.05-2.32-1.32-3.15-2.54C4.0,17.0,2.71,12.45,4.47,9.38c.87-1.52,2.43-2.48,4.12-2.51,1.28-.02,2.5.87,3.29.87.78,0,2.26-1.07,3.81-.91.65.03,2.47.26,3.64,1.98-.09.06-2.17,1.26-2.15,3.77.02,3.02,2.6,4.03,2.63,4.04-.03.06-.53,1.2-1.31,2.36ZM15.25,5.18c.7-.84,1.16-2.01,1.03-3.18-1.01.04-2.23.67-2.95,1.52-.64.75-1.21,1.95-1.06,3.09,1.3.1,2.36-.54,2.98-.43Z"/></svg>Get Shuttls for iPhone</a>
-      <p class="note" id="android" hidden>The Android app is on its way. For now, ask your organiser to check you in.</p>
+      <a id="open" class="btn btn-line">Open Shuttls</a>
     </div>
-    <p class="hint" id="hint" hidden>New to Shuttls? Download the free app and sign up. Your check-in will be waiting for you.</p>
+    <section class="tap-card sess" id="session" hidden>
+      <span class="label">Session</span>
+      <div class="live" id="live" hidden>Happening now</div>
+      <div class="name" id="sessName"></div>
+      <div class="when" id="sessWhen"></div>
+    </section>
+    <a id="ios" class="btn btn-gold tap-ios" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71,19.5c-.83,1.24-1.71,2.45-3.1,2.48-1.37.03-1.81-.79-3.38-.79-1.58,0-2.07.77-3.39.82-1.32.05-2.32-1.32-3.15-2.54C4.0,17.0,2.71,12.45,4.47,9.38c.87-1.52,2.43-2.48,4.12-2.51,1.28-.02,2.5.87,3.29.87.78,0,2.26-1.07,3.81-.91.65.03,2.47.26,3.64,1.98-.09.06-2.17,1.26-2.15,3.77.02,3.02,2.6,4.03,2.63,4.04-.03.06-.53,1.2-1.31,2.36ZM15.25,5.18c.7-.84,1.16-2.01,1.03-3.18-1.01.04-2.23.67-2.95,1.52-.64.75-1.21,1.95-1.06,3.09,1.3.1,2.36-.54,2.98-.43Z"/></svg>Get Shuttls for iPhone</a>
+    <p class="note" id="android" hidden>The Android app is on its way. For now, ask your organiser to check you in.</p>
+    <p class="tap-foot" id="hint" hidden>New to Shuttls? Download the free app and sign up. Your check-in will be waiting for you.</p>
     <noscript><p class="note">Enable JavaScript to open your club check-in.</p></noscript>
   </main>
   <script>
@@ -39,11 +49,48 @@
       const app = `shuttls://checkin?id=${id.toLowerCase()}&t=${token.toLowerCase()}`;
       const android = /Android/i.test(navigator.userAgent);
       const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      q('actions').hidden = false; q('hint').hidden = false; q('open').href = app;
-      if (android) { q('open').hidden = true; q('ios').hidden = true; q('android').hidden = false; q('hint').hidden = true; }
+      q('actions').hidden = false; q('hint').hidden = false; q('open').href = app; q('ios').hidden = false;
+      if (android) { q('actions').hidden = true; q('ios').hidden = true; q('android').hidden = false; q('hint').hidden = true; }
       // The App Store cannot carry this club across an install, so hand it over through the clipboard.
       // On first launch Shuttls reads the link back and opens this club's check-in after sign-up.
       q('ios').addEventListener('click', () => { try { navigator.clipboard.writeText(app).catch(() => {}); } catch (e) {} });
+
+      // Show which club and session this is. Unknown or mismatched links keep the generic message above.
+      fetch('https://hytqucmpyvjgrzaofjdi.supabase.co/rest/v1/rpc/public_checkin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: 'sb_publishable_dzXgfT8A0gJyf44iWaeDZA_Bft6EQNU' },
+        body: JSON.stringify({ p_club: id.toLowerCase(), p_token: token.toLowerCase() })
+      }).then(r => r.json()).then(d => {
+        if (!d || d.state !== 'FOUND') return;
+        const c = d.club, s = d.session;
+        q('main').classList.add('tap');
+        q('badge').hidden = true;
+        q('chip').hidden = false;
+        q('description').hidden = true;
+        q('title').textContent = 'Check in to ' + c.name;
+        q('open').textContent = 'Check in on Shuttls';
+        document.title = 'Check in to ' + c.name + ' | Shuttls';
+
+        const logo = q('clubLogo');
+        logo.hidden = false;
+        const initial = () => { logo.replaceChildren(); logo.textContent = (c.name || '?')[0].toUpperCase(); };
+        if (typeof c.logo === 'string' && /^https:\/\//.test(c.logo)) {
+          const img = document.createElement('img'); img.alt = ''; img.src = c.logo; img.onerror = initial;
+          logo.append(img);
+        } else initial();
+
+        if (s) {
+          const tz = c.timezone || undefined;
+          const day = (d) => new Intl.DateTimeFormat(undefined, { weekday: 'long', day: 'numeric', month: 'short', timeZone: tz }).format(d);
+          const time = (d) => new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', timeZone: tz }).format(d);
+          const a = new Date(s.starts_at), b = new Date(s.ends_at);
+          q('sessName').textContent = s.title;
+          q('sessWhen').textContent = day(a) + ' · ' + time(a) + ' – ' + time(b);
+          q('live').hidden = !s.live;
+          q('session').hidden = false;
+        }
+      }).catch(() => {});
+
       if (ios) location.replace(app);
     }
   </script>
