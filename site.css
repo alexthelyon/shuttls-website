@@ -402,7 +402,7 @@ footer small { color: var(--text-faint); font-size: 13px; width: 100%; }
 .pl-row.hot { border-color: var(--gold-deep); background: linear-gradient(160deg, var(--gold-wash), var(--surface-high) 70%); }
 .pl-row.hot .num { color: var(--gold); }
 
-.night, .rank-block { margin-top: clamp(72px, 9vw, 120px); }
+.night, .rank-block, .nf-block { margin-top: clamp(72px, 9vw, 120px); }
 .reports { margin-top: clamp(72px, 9vw, 120px); }
 
 /* Club night animation */

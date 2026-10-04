@@ -668,7 +668,7 @@
     ];
     const MAX = 4;
     let n = 0, mins = 19 * 60 + 42;
-    const fmt = () => String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
+    const fmt = () => String(Math.floor(mins / 60) % 24).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
     const make = ([ic, club, msg], instant) => {
       const el = document.createElement('div'); el.className = 'nf-item' + (instant ? ' in' : '');
       el.innerHTML = `<div class="nf-inner"><div class="nf-card"><img class="nf-app" src="app-icon.png" alt="" width="34" height="34"><div class="nf-txt"><div class="nf-top"><b>${club} ${ic}</b><small>now</small></div><p>${msg}</p></div></div></div>`;
