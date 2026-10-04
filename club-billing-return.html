@@ -1,6 +1,29 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer"><title>Back to Shuttls</title>
-<style>body{margin:0;min-height:100svh;display:grid;place-items:center;background:#101114;color:#faf7f2;font:18px system-ui;padding:24px}main{max-width:400px;text-align:center}p{line-height:1.6;color:#bfc0c5}a{display:block;padding:18px;background:#e83f4f;border-radius:16px;color:white;text-decoration:none;font-weight:700}</style></head>
-<body><main><h1>Back to your club</h1><p>Open Shuttls to see the latest status. Payments and memberships update once Stripe confirms them.</p><a id="open" href="shuttls://">Open Shuttls</a></main>
-<script>const id=new URLSearchParams(location.search).get('id');if(id&&/^[0-9a-f-]{36}$/i.test(id)){const url='shuttls://club-billing?id='+encodeURIComponent(id);document.getElementById('open').href=url;}</script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A0908">
+  <title>Back to Shuttls</title>
+  <link rel="icon" href="app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="land">
+  <main>
+    <img class="logo-img" src="logo.png" alt="Shuttls">
+    <div class="badge" aria-hidden="true">✅</div>
+    <h1 class="display">Back to your club</h1>
+    <p class="lede">Open Shuttls to see the latest status. Payments and memberships update once your payment is confirmed.</p>
+    <div class="stack"><a id="open" class="btn btn-gold" href="shuttls://">Open Shuttls</a></div>
+  </main>
+  <script>
+    const id = new URLSearchParams(location.search).get('id');
+    if (id && /^[0-9a-f-]{36}$/i.test(id)) document.getElementById('open').href = 'shuttls://club-billing?id=' + encodeURIComponent(id);
+  </script>
+</body>
+</html>

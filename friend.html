@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0A0908">
-  <title>Check in | Shuttls</title>
+  <title>Add a friend | Shuttls</title>
   <link rel="icon" href="app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,33 +16,30 @@
 <body class="land">
   <main>
     <img class="logo-img" src="logo.png" alt="Shuttls">
-    <div class="badge" aria-hidden="true">🏸</div>
-    <h1 class="display" id="title">Ready to play?</h1>
-    <p class="lede" id="description">Open Shuttls to check in to your club session.</p>
+    <div class="badge" aria-hidden="true">🤝</div>
+    <h1 class="display" id="title">Add your friend</h1>
+    <p class="lede" id="description">Open Shuttls to connect your accounts and share session updates.</p>
     <div class="stack" id="actions" hidden>
       <a id="open" class="btn btn-gold">Open Shuttls</a>
       <a id="ios" class="btn btn-line" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71,19.5c-.83,1.24-1.71,2.45-3.1,2.48-1.37.03-1.81-.79-3.38-.79-1.58,0-2.07.77-3.39.82-1.32.05-2.32-1.32-3.15-2.54C4.0,17.0,2.71,12.45,4.47,9.38c.87-1.52,2.43-2.48,4.12-2.51,1.28-.02,2.5.87,3.29.87.78,0,2.26-1.07,3.81-.91.65.03,2.47.26,3.64,1.98-.09.06-2.17,1.26-2.15,3.77.02,3.02,2.6,4.03,2.63,4.04-.03.06-.53,1.2-1.31,2.36ZM15.25,5.18c.7-.84,1.16-2.01,1.03-3.18-1.01.04-2.23.67-2.95,1.52-.64.75-1.21,1.95-1.06,3.09,1.3.1,2.36-.54,2.98-.43Z"/></svg>Get Shuttls for iPhone</a>
-      <p class="note" id="android" hidden>The Android app is on its way. For now, ask your organiser to check you in.</p>
+      <p class="note" id="android" hidden>The Android app is on its way. Ask your friend to share this again once it is out.</p>
     </div>
-    <p class="hint" id="hint" hidden>New to Shuttls? Download the free app and sign up. Your check-in will be waiting for you.</p>
-    <noscript><p class="note">Enable JavaScript to open your club check-in.</p></noscript>
+    <p class="hint" id="hint" hidden>New to Shuttls? Download the free app and sign up. Your friend request will be waiting for you.</p>
   </main>
   <script>
     const params = new URLSearchParams(location.search);
     const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-    const id = params.get('id') || '', token = params.get('t') || '';
+    const token = params.get('t') || '';
     const q = (s) => document.getElementById(s);
-    if (!uuid.test(id) || !uuid.test(token)) {
-      q('title').textContent = 'Scan your club QR';
-      q('description').textContent = 'This link is incomplete. Scan the printed QR at your club to check in.';
+    if (!uuid.test(token)) {
+      q('title').textContent = 'Scan a friend QR';
+      q('description').textContent = 'This link is incomplete. Ask your friend to show their QR again.';
     } else {
-      const app = `shuttls://checkin?id=${id.toLowerCase()}&t=${token.toLowerCase()}`;
+      const app = `shuttls://friend?t=${token.toLowerCase()}`;
       const android = /Android/i.test(navigator.userAgent);
       const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       q('actions').hidden = false; q('hint').hidden = false; q('open').href = app;
       if (android) { q('open').hidden = true; q('ios').hidden = true; q('android').hidden = false; q('hint').hidden = true; }
-      // The App Store cannot carry this club across an install, so hand it over through the clipboard.
-      // On first launch Shuttls reads the link back and opens this club's check-in after sign-up.
       q('ios').addEventListener('click', () => { try { navigator.clipboard.writeText(app).catch(() => {}); } catch (e) {} });
       if (ios) location.replace(app);
     }

@@ -776,3 +776,17 @@ footer small { color: var(--text-faint); font-size: 13px; width: 100%; }
 .lb .row .lvl small { font: 800 9px var(--sans); letter-spacing: 1px; color: var(--text-faint); }
 .cn-head { gap: 10px; flex-wrap: wrap; }
 .cn-legend { margin-right: auto; margin-left: 4px; font: 500 11px var(--sans); color: var(--text-faint); }
+
+/* QR landing pages (check-in, friend, join, billing return) */
+.land { min-height: 100svh; display: grid; place-items: center; padding: 28px; }
+.land main { width: min(100%, 420px); text-align: center; display: grid; gap: 20px; justify-items: center; }
+.land .logo-img { height: 26px; width: auto; margin-bottom: 8px; }
+.land .badge { width: 84px; height: 84px; border-radius: 22px; display: grid; place-items: center; font-size: 40px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 0 0 6px rgba(201, 169, 97, .08); }
+.land h1 { font-size: clamp(34px, 9vw, 46px); }
+.land .lede { max-width: 34ch; margin-inline: auto; }
+.land .stack { display: grid; gap: 12px; width: 100%; margin-top: 6px; }
+.land .btn { width: 100%; }
+.land .btn svg { width: 18px; height: 18px; }
+.land .note { color: var(--text-dim); font-size: 14.5px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+.land .hint { font-size: 13.5px; color: var(--text-faint); max-width: 34ch; }
+.land [hidden] { display: none !important; }
