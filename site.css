@@ -693,3 +693,86 @@ footer small { color: var(--text-faint); font-size: 13px; width: 100%; }
 .shuttle-divider { margin: 0; }
 .hero { padding-bottom: clamp(20px, 3vw, 36px); }
 #players { padding-top: clamp(20px, 3vw, 36px); }
+
+/* ── Nicer FAQ ── */
+.faq details { transition: border-color .25s, background .25s, transform .2s; }
+.faq details:hover { border-color: var(--gold-deep); transform: translateY(-1px); }
+.faq details[open] { background: linear-gradient(160deg, var(--gold-wash), var(--surface) 55%); }
+.faq summary { padding: 20px 22px; font-size: 16.5px; user-select: none; -webkit-tap-highlight-color: transparent; }
+.faq summary:hover { color: #fff; }
+.faq summary:focus-visible { outline-offset: -3px; border-radius: var(--r-md); }
+.faq summary::after { content: "+"; flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line);
+  font: 400 22px/1 var(--sans); color: var(--gold); background: var(--surface-high); padding-bottom: 2px;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), background .25s, color .25s, border-color .25s; }
+.faq summary:hover::after { border-color: var(--gold-deep); }
+.faq details[open] summary::after { transform: rotate(135deg); background: var(--gold); color: var(--ground); border-color: var(--gold); }
+.faq details[open] p { animation: faqin .45s ease both; }
+@keyframes faqin { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .faq details, .faq summary::after { transition: none; } .faq details[open] p { animation: none; } }
+
+/* ── Court maker animation (ratings, picks, balance) ── */
+.cn { --ph: 42px; }
+.cn-ct { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.cn-bal { font: 600 11.5px var(--sans); color: var(--gold); }
+.cn-wgrid { grid-template-rows: repeat(4, var(--ph)); }
+.cn .pl { flex-direction: column; align-items: flex-start; justify-content: center; gap: 1px; padding: 0 9px; }
+.cn .pl .nm { font: 600 12.5px/1.2 var(--sans); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cn .pl .rt { display: flex; align-items: center; gap: 5px; font: 500 10.5px/1.2 var(--sans); color: var(--text-faint); white-space: nowrap; }
+.cn .pl .rt u { text-decoration: none; color: var(--gold); font-size: 7px; letter-spacing: 1px; }
+.cn .pl.on .rt { color: var(--text-dim); }
+.cn .pl.cand { border-color: var(--gold-deep); color: var(--text); }
+.cn .pl.pick { border-color: var(--gold); background: #2c2616; color: var(--text); box-shadow: 0 0 0 1px var(--gold), 0 0 18px rgba(201, 169, 97, .35); z-index: 3; }
+.cn .pl.pick .rt { color: var(--gold); }
+.cn .pl.dim { opacity: .38; }
+.cn .pl { transition: transform .6s cubic-bezier(.55, 0, .2, 1), background .4s, border-color .4s, color .4s, opacity .4s, box-shadow .4s; }
+.cn-caption { max-width: 62%; line-height: 1.3; }
+@media (max-width: 560px) {
+  .cn .pl { padding: 0 6px; }
+  .cn .pl .nm { font-size: 11.5px; }
+  .cn .pl .rt { font-size: 9.5px; }
+}
+.cn-wt { min-height: 34px; align-items: flex-start; }
+.cn-caption { min-height: 2.6em; }
+
+/* Rating change chips at the crown */
+.cn .pl .dlt { position: absolute; right: -6px; top: -11px; z-index: 6; padding: 2px 7px; border-radius: 999px; font: 700 11px/1.3 var(--sans); font-style: normal; pointer-events: none;
+  animation: dlt 3.2s ease-out both; box-shadow: 0 6px 14px rgba(0, 0, 0, .5); }
+.cn .pl .dlt.up { background: var(--gold); color: var(--ground); }
+.cn .pl .dlt.down { background: #3a1818; color: var(--true-red); border: 1px solid rgba(255, 75, 75, .5); }
+@keyframes dlt { 0% { opacity: 0; transform: translateY(8px) scale(.7); } 12% { opacity: 1; transform: none; } 78% { opacity: 1; transform: translateY(-4px); } 100% { opacity: 0; transform: translateY(-12px); } }
+.cn .pl .lv { font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .cn .pl .dlt { animation: none; } }
+
+/* Rank badges and team pairing in the court maker */
+.cn .pl[data-rank]::before { content: "#" attr(data-rank); position: absolute; left: -7px; top: -8px; z-index: 6; min-width: 20px; padding: 1px 5px; border-radius: 999px;
+  background: var(--ground); border: 1px solid var(--gold-deep); color: var(--gold); font: 700 10.5px/1.4 var(--sans); text-align: center; }
+.cn .pl[data-team="A"] { border-color: var(--gold); background: #33291a; box-shadow: 0 0 0 1px var(--gold), 0 0 16px rgba(201, 169, 97, .35); }
+.cn .pl[data-team="B"] { border-color: #d8d4c9; background: #26262a; box-shadow: 0 0 0 1px #d8d4c9, 0 0 16px rgba(216, 212, 201, .22); }
+.cn .pl[data-team="A"] .rt { color: var(--gold); }
+
+/* Rating change chip now sits inside the pill, on the right */
+.cn .pl .dlt { right: 6px; top: 50%; padding: 1px 6px; font-size: 10.5px; animation: dlt2 3.2s ease-out both; box-shadow: none; }
+@keyframes dlt2 { 0% { opacity: 0; transform: translateY(-30%) scale(.7); } 12% { opacity: 1; transform: translateY(-50%); } 80% { opacity: 1; transform: translateY(-50%); } 100% { opacity: 0; transform: translateY(-60%); } }
+/* nudge the rating chip in from the pill edge */
+.cn .pl .dlt { right: 14px; padding: 2px 8px; line-height: 1.2; white-space: nowrap; }
+@media (max-width: 560px) { .cn .pl .dlt { right: 8px; padding: 2px 6px; } }
+.cn .pl em.dlt { font-style: normal; width: auto; height: auto; display: block; border-radius: 999px; }
+/* rating chip: bottom-right of the pill, beside the Lv number, clear of the name */
+.cn .pl em.dlt { top: auto; bottom: 5px; right: 8px; padding: 1px 6px; font-size: 10px; line-height: 1.3; animation: dlt3 1.8s ease-out both; }
+@keyframes dlt3 { 0% { opacity: 0; transform: translateY(6px) scale(.7); } 12% { opacity: 1; transform: none; } 80% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-4px); } }
+@media (max-width: 560px) { .cn .pl em.dlt { right: 5px; padding: 1px 5px; } }
+.cn .pl em.dlt { right: 6px; bottom: 4px; padding: 0 5px; font-size: 9.5px; line-height: 1.45; }
+.cn .pl:has(.dlt) .rt u { display: none; }
+.display em.goldem { font-style: italic; color: var(--gold); font-weight: 600; }
+.split.intro { margin: clamp(24px, 3vw, 40px) 0 clamp(40px, 5vw, 72px); }
+.cn .pl em.dlt { animation-duration: 1.8s; }
+
+/* Leaderboard rows in the app's style: name + record, club level on the right */
+.lb .row .grow b { display: block; font-size: 14.5px; }
+.lb .row .rec { display: block; color: var(--text-dim); font-size: 12px; margin-top: 1px; }
+.lb .row .lvl { text-align: right; line-height: 1.1; }
+.lb .row .lvl b { display: block; font-family: var(--serif); font-size: 22px; color: var(--text); }
+.lb .row:first-child .lvl b, .lb .row .lvl b { color: var(--gold); }
+.lb .row .lvl small { font: 800 9px var(--sans); letter-spacing: 1px; color: var(--text-faint); }
+.cn-head { gap: 10px; flex-wrap: wrap; }
+.cn-legend { margin-right: auto; margin-left: 4px; font: 500 11px var(--sans); color: var(--text-faint); }
