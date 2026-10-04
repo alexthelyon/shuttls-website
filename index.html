@@ -491,6 +491,26 @@
         <p class="lede">Every result moves a player&rsquo;s club level and adds to their club wins and losses. Players check out with their record for the evening, and a reason to come back next week.</p>
       </div>
     </div>
+
+    <!-- NEVER MISS A THING (animated notifications) -->
+    <div class="split nf-block">
+      <div class="copy">
+        <span class="label gold reveal">Notifications</span>
+        <h2 class="display reveal d1">Never miss<br>a thing.</h2>
+        <p class="lede reveal d2">Shuttls taps you on the shoulder the moment something happens at your club: a member checks in, a payment lands, someone joins or lapses. No refreshing, no spreadsheets.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>Money, as it lands</b>: sign-ups, renewals and walk-in fees, with the amount and the plan.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Problems, early</b>: failed payments and memberships that won&rsquo;t renew, so you can step in.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Who&rsquo;s turning up</b>: new members and check-ins as they happen, and a nudge when renewals are due.</span></li>
+        </ul>
+      </div>
+      <div class="nf reveal d2" id="nf" aria-label="Animated example of club admin push notifications: a member checks in, a payment lands, someone joins">
+        <div class="nf-phone">
+          <div class="nf-time"><b id="nfClock">19:42</b><span>Tuesday club night</span></div>
+          <div class="nf-list" id="nfList"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -629,6 +649,42 @@
       if (e.isIntersecting) { const my = ++gen; start(() => gen !== my); } else { gen++; }
     }), { threshold: 0.35 }).observe(el);
   }
+
+  // ── Never miss a thing: admin push notifications arriving one by one (copy mirrors the real pushes) ──
+  (function () {
+    const root = document.getElementById('nf'); if (!root) return;
+    const list = document.getElementById('nfList'), clock = document.getElementById('nfClock');
+    const feed = [
+      ['👋', 'Northside', 'Freddie C checked in.'],
+      ['💰✅', 'Northside', 'Sam L just paid £35 for Monthly membership.'],
+      ['🎟️', 'Northside', 'Sam L redeemed their membership.'],
+      ['👋✨', 'Northside', 'Aiko M has joined the club. Welcome!'],
+      ['💰✅', 'Northside', 'Walk-in fee received from Zoe K (£6).'],
+      ['⚠️', 'Northside', 'Priya N’s payment failed. Their membership is now in a grace period.'],
+      ['💰⏱️', 'Northside', '3 memberships due to renew this week.'],
+      ['💰✅', 'Northside', 'Dev S renewed their Monthly membership.'],
+      ['👋', 'Northside', 'Lee K checked in.'],
+      ['❌', 'Northside', 'Tom H won’t be renewing their membership.']
+    ];
+    const MAX = 4;
+    let n = 0, mins = 19 * 60 + 42;
+    const fmt = () => String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
+    const make = ([ic, club, msg], instant) => {
+      const el = document.createElement('div'); el.className = 'nf-item' + (instant ? ' in' : '');
+      el.innerHTML = `<div class="nf-inner"><div class="nf-card"><img class="nf-app" src="app-icon.png" alt="" width="34" height="34"><div class="nf-txt"><div class="nf-top"><b>${club} ${ic}</b><small>now</small></div><p>${msg}</p></div></div></div>`;
+      return el;
+    };
+    if (reduce) { feed.slice(0, MAX).forEach((f) => list.appendChild(make(f, true))); return; }
+    const push = () => {
+      const el = make(feed[n++ % feed.length]); list.prepend(el);
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('in')));
+      mins += 1 + (n % 3); clock.textContent = fmt();
+      [...list.children].slice(MAX).forEach((old) => { old.classList.add('out'); setTimeout(() => old.remove(), 600); });
+    };
+    whenVisible(root, async (stale) => {
+      while (!stale()) { push(); await sleep(2300); }
+    });
+  })();
 
   // Check-in demo stepper
   const states = [...document.querySelectorAll('.state')], btns = [...document.querySelectorAll('.stepper button')];
