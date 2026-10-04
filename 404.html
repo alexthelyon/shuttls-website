@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A0908">
+  <title>Shuttls Tap</title>
+  <link rel="icon" href="/app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body class="land">
+  <main>
+    <img class="logo-img" src="/logo.png" alt="Shuttls">
+    <div class="badge" aria-hidden="true">🏸</div>
+    <h1 class="display" id="title">Page not found</h1>
+    <p class="lede" id="description">This page doesn't exist. <a href="/">Back to Shuttls</a></p>
+    <div class="stack" id="actions" hidden>
+      <a id="open" class="btn btn-gold">Open Shuttls</a>
+      <a class="btn btn-line" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633">Get Shuttls for iPhone</a>
+    </div>
+  </main>
+  <script>
+    // GitHub Pages serves this file for any unknown path, so /t/<token> lands here.
+    // Installed iPhones open the app via Universal Link before this loads; this is the fallback.
+    const m = location.pathname.match(/^\/t\/([A-Za-z0-9_-]{4,64})\/?$/);
+    if (m) {
+      const app = `shuttls://tap/${m[1]}`;
+      document.getElementById('title').textContent = 'Your Shuttls Tap';
+      document.getElementById('description').textContent = 'Open Shuttls to see this racket or connect the Tap to yours.';
+      document.getElementById('actions').hidden = false;
+      document.getElementById('open').href = app;
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) location.replace(app);
+    }
+  </script>
+</body>
+</html>
