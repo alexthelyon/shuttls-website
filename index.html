@@ -81,27 +81,16 @@
   </div>
 </section>
 
-<!-- BAND -->
-<section style="padding:0 0 clamp(64px,8vw,96px)">
-  <div class="wrap">
-    <div class="band reveal">
-      <div><span class="num">1</span><span>QR code, printed once, for every session you ever run</span></div>
-      <div><span class="num">3</span><span>ways to pay: Apple Pay, cash, or settle later</span></div>
-      <div><span class="num">14</span><span>competitive divisions, Rookie to Immortal</span></div>
-      <div><span class="num">1</span><span>app for the organiser, the players and the scoreboard</span></div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════ FOR CLUBS ═══════════════ -->
 <section id="clubs" class="rule zone">
   <div class="wrap">
     <div class="head center grand">
       <span class="tag reveal">For clubs &amp; organisers</span>
-      <h2 class="display reveal d1">Everything an organiser<br>was doing by hand.</h2>
+      <h2 class="display reveal d1">Spend less time managing.<br><em>More time playing.</em></h2>
       <p class="lede reveal d2">Sessions, money, memberships and who&rsquo;s on court &mdash; set it up once and let Shuttls keep the books.</p>
     </div>
 
+    <div class="club-top">
     <!-- CHECK-IN PHONE DEMO -->
     <div class="stage demo reveal d2">
       <div class="phone" aria-label="Shuttls check-in, step by step (illustrative)">
@@ -179,24 +168,38 @@
         <div class="roster-top">
           <div>
             <span class="label">Live roster</span>
-            <h3 style="margin-top:10px">See who&rsquo;s in, who&rsquo;s paid, who owes</h3>
-            <p>A running attendance list for every session. Tap through to a player&rsquo;s balance, mark cash, waive a fee, or fix a mistake &mdash; the history always stays intact.</p>
-          </div>
-          <div class="poster">
-            <svg class="qr-mini qrsvg" viewBox="0 0 25 25" data-seed="21"></svg>
-            <div class="t">Scan.<br>Check in.<br><span class="gold">Play.</span></div>
-          </div>
+            <h3 style="margin-top:10px">See who&rsquo;s in, who&rsquo;s paid, who owes</h3>          </div>
         </div>
+        <div class="rwrap" id="rwrap">
+        <div class="rv">
         <div class="viz rows">
-          <div class="row"><span class="av">AK</span><span class="grow">Amira K.</span><span class="chip">Paid &middot; Apple Pay</span><span class="amt">£6.00</span></div>
-          <div class="row"><span class="av">JT</span><span class="grow">Jamie T.</span><span class="chip">Member &middot; covered</span><span class="amt">£0.00</span></div>
-          <div class="row"><span class="av">RO</span><span class="grow">Ravi O.</span><span class="chip mute">Pay later</span><span class="amt">£6.00</span></div>
-          <div class="row"><span class="av">SL</span><span class="grow">Sam L.</span><span class="chip">Cash</span><span class="amt">£6.00</span></div>
+          <div class="row" data-u="noah" role="button" tabindex="0"><span class="av">NW</span><span class="grow">Noah W</span><span class="chip">Paid &middot; Walk-in</span><span class="amt">£6.00</span></div>
+          <div class="row sel" data-u="jamie" role="button" tabindex="0"><span class="av">FC</span><span class="grow">Frederick C</span><span class="chip">Member &middot; covered</span><span class="amt"></span></div>
+          <div class="row" data-u="ravi" role="button" tabindex="0"><span class="av">EG</span><span class="grow">Edward G</span><span class="chip mute">Unpaid</span><span class="amt">£6.00</span></div>
+          <div class="row" data-u="sam" role="button" tabindex="0"><span class="av">BT</span><span class="grow">Billy T</span><span class="chip mute">Unpaid</span><span class="amt">£6.00</span></div>
         </div>
         <div class="cap">
           <div class="cap-top"><span class="label">Capacity</span><span class="gold">6 spots left</span></div>
           <div class="meter"><i style="width:75%"></i></div>
           <div class="meter-cap"><span>18 of 24 spots taken</span><span class="dim">Never over-book the hall</span></div>
+        </div>
+        </div>
+        <div class="pd" id="pd" aria-live="polite">
+          <div class="pd-head">
+            <span class="av big" id="pdAv">FC</span>
+            <div><b id="pdName">Frederick C</b><small id="pdSub">Member since March &middot; 38 visits</small></div>
+            <span class="chip" id="pdChip">Monthly plan</span>
+          </div>
+          <div class="pd-tiles">
+            <div><b id="pdT1">£0.00</b><small id="pdL1">owes you</small></div>
+            <div><b id="pdT2">3 of 4</b><small id="pdL2">sessions used</small></div>
+            <div><b id="pdT3">31 Oct</b><small id="pdL3">renews</small></div>
+          </div>
+          <div class="pd-sec">
+            <span class="label" id="pdSecLabel">Passes &amp; session packs</span>
+            <div class="pd-pass" id="pdSec"><b>Monthly plan</b><span>1 &ndash; 31 Oct</span><div class="meter"><i style="width:75%"></i></div></div>
+          </div>
+        </div>
         </div>
       </article>
 
@@ -208,9 +211,9 @@
           <p>Offer weekly, monthly or yearly plans with sessions included. Players join in a tap right from check-in.</p>
         </div>
         <div class="viz plans">
-          <div class="pl-row hot"><div><b>Walk-in</b><small>Pay as you play</small></div><span class="num">£8<small> / session</small></span></div>
-          <div class="pl-row hot"><div><b>Monthly plan</b><small>4 sessions included</small></div><span class="num">£28<small> / mo</small></span></div>
-          <div class="pl-row hot"><div><b>Yearly plan</b><small>Unlimited sessions</small></div><span class="num">£260<small> / yr</small></span></div>
+          <div class="pl-row hot"><div><b>Walk-in</b><small>Pay as you play</small></div><span class="num">£6<small> / session</small></span></div>
+          <div class="pl-row hot"><div><b>Monthly plan</b><small>4 sessions included</small></div><span class="num">£20<small> / mo</small></span></div>
+          <div class="pl-row hot"><div><b>Yearly plan</b><small>Unlimited sessions</small></div><span class="num">£200<small> / yr</small></span></div>
         </div>
         <div class="paywrap">
           <h3>Get paid without chasing</h3>
@@ -225,6 +228,7 @@
           </div>
         </div>
       </article>
+    </div>
     </div>
     <p class="fine reveal" style="margin-top:18px">Names and figures are illustrative.</p>
 
@@ -333,9 +337,9 @@
       <div class="mockcard reveal">
         <div class="top"><span class="label">Northside leaderboard</span><span class="chip">This month</span></div>
         <div class="lb">
-          <div class="row"><span class="pos">1</span><span class="av">AK</span><span class="grow">Amira K.</span><span class="amt gold">4,210 XP</span></div>
-          <div class="row"><span class="pos">2</span><span class="av">SL</span><span class="grow">Sam L.</span><span class="amt">3,890 XP</span></div>
-          <div class="row"><span class="pos">3</span><span class="av">JT</span><span class="grow">Jamie T.</span><span class="amt">3,440 XP</span></div>
+          <div class="row"><span class="pos">1</span><span class="av">NW</span><span class="grow">Noah W</span><span class="amt gold">4,210 XP</span></div>
+          <div class="row"><span class="pos">2</span><span class="av">BT</span><span class="grow">Billy T</span><span class="amt">3,890 XP</span></div>
+          <div class="row"><span class="pos">3</span><span class="av">FC</span><span class="grow">Frederick C</span><span class="amt">3,440 XP</span></div>
         </div>
       </div>
       <div class="copy reveal d1">
@@ -370,13 +374,13 @@
               <div class="reacts"><span class="rx" data-n="6">👍 <u>0</u></span><span class="rx" data-n="3">🙌 <u>0</u></span></div></div>
           </div>
           <div class="post" data-p="1">
-            <span class="av">SL</span>
-            <div><b>Sam L.</b><small>2 min ago</small><p>Friendly vs Westside this Sunday &mdash; 8 spots, who&rsquo;s in?</p>
+            <span class="av">BT</span>
+            <div><b>Billy T</b><small>2 min ago</small><p>Friendly vs Westside this Sunday &mdash; 8 spots, who&rsquo;s in?</p>
               <div class="reacts"><span class="rx" data-n="9">🔥 <u>0</u></span><span class="rx" data-n="4">💪 <u>0</u></span></div></div>
           </div>
           <div class="post" data-p="2">
-            <span class="av">AK</span>
-            <div><b>Amira K.</b><small>5 min ago</small><p>10 wins in a row! 🏆 Thanks for the games, everyone.</p>
+            <span class="av">NW</span>
+            <div><b>Noah W</b><small>5 min ago</small><p>10 wins in a row! 🏆 Thanks for the games, everyone.</p>
               <div class="reacts"><span class="rx" data-n="12">👏 <u>0</u></span><span class="rx" data-n="7">🎉 <u>0</u></span></div></div>
           </div>
         </div>
@@ -623,9 +627,9 @@
   (function () {
     const root = document.getElementById('cn'); if (!root) return;
     const stage = root.querySelector('.cn-stage'), caption = document.getElementById('cnCaption');
-    const names = ['Amira','Sam','Jamie','Ravi','Priya','Ben','Lee','Zoe','Maya','Omar','Chloe','Dev','Nina','Tom','Aiko','Luis'];
+    const names = ['Noah','Billy','Frederick','Edward','Priya','Ben','Lee','Zoe','Maya','Omar','Chloe','Dev','Nina','Tom','Aiko','Luis'];
     const pls = names.map((n) => {
-      const el = document.createElement('div'); el.className = 'pl';
+      const el = document.createElement('div'); el.className = 'pl' + (n.length > 7 ? ' long' : '');
       el.innerHTML = `<i>${n[0]}</i><span>${n}</span>`; stage.appendChild(el); return el;
     });
     let courts, queue;
@@ -712,6 +716,43 @@
       }
     });
   })();
+
+  // ── Live roster: pick a player to see their account ──
+  (function () {
+    const rows = [...document.querySelectorAll('.row[data-u]')], pd = document.getElementById('pd'); if (!pd) return;
+    const $ = (id) => document.getElementById(id);
+    const bar = (w) => `<div class="meter"><i style="width:${w}%"></i></div>`;
+    const people = {
+      noah: { av: 'NW', name: 'Noah W', sub: 'Walk-in &middot; 12 visits', chip: 'Paid &middot; Apple Pay',
+        t: [['£0.00', 'owes you'], ['12', 'visits'], ['Tonight', 'last visit']],
+        label: 'Tonight', sec: '<b>Club Night</b><span>£6.00 &middot; paid</span>' },
+      jamie: { av: 'FC', name: 'Frederick C', sub: 'Member since March &middot; 38 visits', chip: 'Monthly plan',
+        t: [['£0.00', 'owes you'], ['3 of 4', 'sessions used'], ['31 Oct', 'renews']],
+        label: 'Passes &amp; session packs', sec: `<b>Monthly plan</b><span>1 &ndash; 31 Oct</span>${bar(75)}` },
+      ravi: { av: 'EG', name: 'Edward G', sub: 'Walk-in &middot; 5 visits', chip: 'Unpaid', owe: true,
+        t: [['£6.00', 'owes you'], ['5', 'visits'], ['Tonight', 'last visit']],
+        label: 'Unpaid visits', sec: '<b>Club Night &middot; tonight</b><span>£6.00 &middot; due</span>' },
+      sam: { av: 'BT', name: 'Billy T', sub: 'Walk-in &middot; 21 visits', chip: 'Unpaid', owe: true,
+        t: [['£6.00', 'owes you'], ['21', 'visits'], ['Tonight', 'last visit']],
+        label: 'Unpaid visits', sec: '<b>Club Night &middot; tonight</b><span>£6.00 &middot; due</span>' },
+    };
+    const show = (key) => {
+      const p = people[key]; if (!p) return;
+      rows.forEach((r) => r.classList.toggle('sel', r.dataset.u === key));
+      $('pdAv').textContent = p.av; $('pdName').textContent = p.name;
+      $('pdSub').innerHTML = p.sub; $('pdChip').innerHTML = p.chip;
+      p.t.forEach((t, i) => { $('pdT' + (i + 1)).textContent = t[0]; $('pdL' + (i + 1)).textContent = t[1]; });
+      $('pdT1').classList.toggle('owe', !!p.owe);
+      $('pdSecLabel').innerHTML = p.label; $('pdSec').innerHTML = p.sec;
+      $('pdSec').classList.toggle('owe', !!p.owe);
+      pd.classList.remove('swap'); void pd.offsetWidth; pd.classList.add('swap');
+    };
+    rows.forEach((r) => {
+      r.addEventListener('click', () => show(r.dataset.u));
+      r.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(r.dataset.u); } });
+    });
+  })();
+
 </script>
 </body>
 </html>
