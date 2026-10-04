@@ -34,6 +34,20 @@
       document.getElementById('description').textContent = 'Open Shuttls to see this racket or connect the Tap to yours.';
       document.getElementById('actions').hidden = false;
       document.getElementById('open').href = app;
+      // Public rackets show their card; private or unknown Taps keep the generic message above.
+      fetch('https://hytqucmpyvjgrzaofjdi.supabase.co/rest/v1/rpc/public_tap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: 'sb_publishable_dzXgfT8A0gJyf44iWaeDZA_Bft6EQNU' },
+        body: JSON.stringify({ p_token: m[1] })
+      }).then(r => r.json()).then(d => {
+        if (d.state !== 'CLAIMED') return;
+        const r = d.racket, set = (id, t) => { document.getElementById(id).textContent = t; };
+        const make = [r.brand, r.model].filter(Boolean).join(' ');
+        const tension = r.string_tension ? r.string_tension + ' lbs' : '';
+        const setup = [r.string_name, tension, r.weight_class, r.grip_size].filter(Boolean).join(' · ');
+        set('title', r.name);
+        set('description', [make, setup, d.owner ? 'Owned by ' + d.owner : ''].filter(Boolean).join(' · '));
+      }).catch(() => {});
       if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) location.replace(app);
     }
   </script>
