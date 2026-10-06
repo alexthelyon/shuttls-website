@@ -1,0 +1,40 @@
+/* Scoped privacy-page styles for phone, keyboard and print access. */
+.privacy-policy { --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; --serif: Georgia, "Times New Roman", serif; max-width: 840px; overflow-wrap: anywhere; }
+.privacy-policy .policy-date { margin-bottom: 24px; }
+.privacy-policy h2 { scroll-margin-top: 100px; line-height: 1.3; }
+.privacy-policy a:not(.back) { color: var(--gold); text-underline-offset: 3px; }
+.privacy-policy strong { color: var(--text); }
+.privacy-policy ul, .privacy-policy ol { color: var(--text-dim); padding-left: 24px; margin: 0 0 20px; }
+.privacy-policy li + li { margin-top: 10px; }
+.privacy-policy .policy-notice, .privacy-policy .policy-contents { border: 1px solid var(--gold-deep); background: var(--surface); border-radius: var(--r-md); padding: 22px; margin: 26px 0; }
+.privacy-policy .policy-notice p { margin: 8px 0 0; }
+.privacy-policy .policy-contents h2 { margin: 0 0 16px; }
+.privacy-policy .policy-contents ol { columns: 2; column-gap: 32px; margin-bottom: 0; }
+.privacy-policy .policy-contents li { break-inside: avoid; padding-right: 8px; }
+.privacy-policy .policy-data { margin: 22px 0; }
+.privacy-policy dt { color: var(--text); font-weight: 700; margin-top: 22px; }
+.privacy-policy dd { margin: 6px 0 0; color: var(--text-dim); }
+.privacy-policy .policy-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-md); margin: 22px 0; }
+.privacy-policy table { width: 100%; border-collapse: collapse; text-align: left; font-size: 15px; color: var(--text-dim); }
+.privacy-policy caption { text-align: left; color: var(--text); font-weight: 600; padding: 16px; background: var(--surface); }
+.privacy-policy th { color: var(--text); background: var(--surface-high); }
+.privacy-policy th, .privacy-policy td { padding: 16px; vertical-align: top; border-top: 1px solid var(--line); }
+.privacy-policy th:first-child { width: 48%; }
+.privacy-skip { position: absolute; left: 20px; top: -100px; z-index: 1000; padding: 12px 18px; background: var(--gold); color: var(--ground); }
+.privacy-skip:focus { top: 12px; }
+@media (max-width: 600px) {
+  .privacy-policy { padding-top: 120px; }
+  .privacy-policy .policy-contents ol { columns: 1; }
+  .privacy-policy .policy-notice, .privacy-policy .policy-contents { padding: 18px; }
+  .privacy-policy th, .privacy-policy td { padding: 10px; font-size: 14px; }
+}
+@media print {
+  body, body::before { background: white; color: black; }
+  .nav, .privacy-skip, .privacy-policy .back, .privacy-policy .policy-contents { display: none; }
+  .privacy-policy { width: 100%; max-width: none; padding: 0; font-size: 11pt; }
+  .privacy-policy p, .privacy-policy li, .privacy-policy dt, .privacy-policy dd, .privacy-policy strong, .privacy-policy h2, .privacy-policy a:not(.back), .privacy-policy table, .privacy-policy th { color: black; }
+  .privacy-policy .policy-notice, .privacy-policy caption, .privacy-policy th { background: white; }
+  .privacy-policy h2, .privacy-policy dt { break-after: avoid; }
+  .privacy-policy tr { break-inside: avoid; }
+  .privacy-policy .policy-table-wrap { overflow: visible; }
+}

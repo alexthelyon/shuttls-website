@@ -4,32 +4,242 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Shuttls</title>
+  <meta name="description" content="How Shuttls handles account, badminton, health, club, payment and website data, and how to exercise your privacy rights.">
+  <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0A0908">
   <link rel="icon" href="app-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="privacy.css">
 </head>
 <body>
+  <a class="privacy-skip" href="#policy">Skip to privacy policy</a>
   <header class="nav scrolled"><div class="wrap"><a href="index.html" class="nav-logo" aria-label="Shuttls"><img src="logo.png" alt="Shuttls"></a><a href="index.html" class="btn btn-line">Back to home</a></div></header>
-  <main class="wrap legal">
+  <main id="policy" class="wrap legal privacy-policy">
     <h1>Privacy Policy</h1>
-    <p>Last updated: February 28, 2026</p>
+    <p class="policy-date">Draft prepared: <time datetime="2026-10-06">6 October 2026</time></p>
+    <!-- Resolve ../privacy-policy-review.md before publication; add an effective date
+         and remove the draft notices and noindex directive only after verification. -->
+    <aside class="policy-notice" aria-label="Draft status">
+      <strong>Draft for review — not yet effective.</strong>
+      <p>The operator, privacy contact, minimum age and database region have been confirmed. Health-data consent, private profile access, younger-user defaults, advertising controls and complete deletion still require app/backend changes and testing before publication.</p>
+    </aside>
+    <p>This policy explains how Shuttls handles personal data when you use shuttlsapp.com, our phone apps, compatible watch apps and connected features (together, the “Service”). Features and collection differ by device, app version, permissions and the features you use.</p>
+    <p>Personal data includes information that identifies you directly or indirectly, such as email addresses, account IDs, device identifiers and health measurements linked to your account. This policy provides information; reading it or using Shuttls does not itself give consent to optional processing.</p>
 
-    <h2>Information We Collect</h2>
-    <p>Shuttls is designed to be a privacy-first application. We do not collect personally identifiable information
-      unless explicitly provided by you (e.g., for cloud syncing features).</p>
+    <nav class="policy-contents" aria-label="Privacy policy contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#controller">Responsibility and contact</a></li>
+        <li><a href="#data">Data and its sources</a></li>
+        <li><a href="#purposes">Purposes and legal bases</a></li>
+        <li><a href="#health">Health and watch data</a></li>
+        <li><a href="#visibility">Social and public sharing</a></li>
+        <li><a href="#providers">Providers and recipients</a></li>
+        <li><a href="#advertising">Advertising and tracking</a></li>
+        <li><a href="#website">Website and email</a></li>
+        <li><a href="#transfers">International transfers</a></li>
+        <li><a href="#retention">Retention and deletion</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights">Your rights and choices</a></li>
+        <li><a href="#children">Children and young people</a></li>
+        <li><a href="#automated">Automated processing</a></li>
+        <li><a href="#complaints">Complaints</a></li>
+        <li><a href="#changes">Policy changes</a></li>
+      </ol>
+    </nav>
 
-    <h2>How We Use Your Data</h2>
-    <p>Your match data is stored locally on your device or synced via iCloud. We use this data solely to provide you
-      with match statistics and performance analytics.</p>
+    <section aria-labelledby="controller">
+      <h2 id="controller">1. Responsibility and contact</h2>
+      <p><strong>Alexanda Lyon, trading as Shuttls, United Kingdom</strong>, is the controller responsible for Shuttls’ own processing of personal data.</p>
+      <p>For privacy questions, rights requests, deletion requests or complaints, email <a href="mailto:privacy@shuttlsapp.com">privacy@shuttlsapp.com</a>. You can use this address even if you cannot sign in or have uninstalled the app.</p>
+      <p>A club or venue may separately determine how it uses membership, attendance and financial records. It is then responsible as controller for that processing and its own privacy information. Where Shuttls manages records solely on a club’s instructions, Shuttls acts as its processor. Shuttls remains controller for its own account, platform, security and subscription processing.</p>
+    </section>
 
-    <h2>Third-Party Services</h2>
-    <p>We may use third-party analytics (e.g., Apple App Store Analytics) and ad networks (e.g., AdMob) which may
-      collect anonymous usage data to improve the app and show personalized ads.</p>
+    <section aria-labelledby="data">
+      <h2 id="data">2. Data and its sources</h2>
+      <p>We handle data you enter, data generated by using the Service, and information from the connected services and other people described below.</p>
+      <dl class="policy-data">
+        <dt>Account and player profile</dt>
+        <dd>Email address, account ID, sign-in credentials or provider identifiers, name, username, chosen photo and settings. Optional onboarding questions include age range, playing experience, skill level, training history, competition level and watch ownership. Sign in with Apple can supply your name, provider ID and email, including a private relay address. Authentication services handle session tokens and sign-in events.</dd>
+        <dt>Matches, activity and performance</dt>
+        <dd>Scores, opponents and teammates, results, match/session dates, duration, serving and point history, club association, experience points, streaks, ratings and competition results. Other players or organisers may record matches involving you. Compatible watches supply movement and swing measurements and timestamps used for performance estimates.</dd>
+        <dt>Health and fitness</dt>
+        <dd>With relevant permissions, heart-rate samples, average and maximum heart rate, active calories, distance and workout information. We also handle heart-rate settings and derived fitness or recovery estimates. Available data depends on your device and integration. See <a href="#health">section 4</a>.</dd>
+        <dt>Location and venue discovery</dt>
+        <dd>Coordinates when you allow location access, search terms, selected towns, venue addresses and location pins. A request to add nearby clubs can include your account ID, town and available coordinates. Venue information may come from organisers, users, public business listings, Google Places or Companies House. Map/location services receive information needed for searches and maps.</dd>
+        <dt>Social, club and racket features</dt>
+        <dd>Friend connections and requests, invitations, shared links and QR tokens, game/lobby participation, memberships, attendance, check-ins, session plans, court allocations, announcements, photos, reviews, reports and administration records. Racket profiles include equipment details, visibility choices and NFC tag identifiers, claim status, scan count and last scan time. Organisers can add guest player names without those players having an account.</dd>
+        <dt>Payments and subscriptions</dt>
+        <dd>Products, subscription status and expiry, purchase/transaction references, club fees, membership plans, balances, refunds and payment status; and club operators’ payment account identifiers and onboarding status. Payment providers handle card details and authentication directly. Shuttls’ application records use payment references rather than full card numbers or card security codes.</dd>
+        <dt>Device, technical and notification data</dt>
+        <dd>IP address, device/watch model, operating system, app version, linked-device identifiers, pairing codes, session tokens, time zone, notification preferences and push tokens. Error reports can include account ID, error details, app/device information and context of the failed action. Infrastructure and app-store services may supply security, diagnostic or aggregate performance information.</dd>
+        <dt>Advertising</dt>
+        <dd>Where enabled, Google’s advertising software may handle IP address and inferred approximate location, device/advertising identifiers, impressions, interactions, diagnostics and performance data. Shuttls records rewards or boost expiry when a rewarded ad is completed. See <a href="#advertising">section 7</a>.</dd>
+        <dt>Support, waitlist and business enquiries</dt>
+        <dd>Email address, name if provided, messages, attachments and request history. The Android launch waitlist collects an email address. Public listings and organisers may provide business contact details for club discovery and relevant business enquiries.</dd>
+      </dl>
+      <p>Account identifiers and information necessary for a feature are required to provide it. Payment providers may require additional information by law. Optional photos, health access and location access are not required for an ordinary account; declining them limits the related feature. Avoid putting sensitive information about yourself or others in public fields.</p>
+    </section>
 
-    <a class="back" href="index.html">&larr; Back to Home</a>
+    <section aria-labelledby="purposes">
+      <h2 id="purposes">3. Purposes and legal bases</h2>
+      <p>Where UK GDPR or EU GDPR applies, the bases for Shuttls’ controller activities are below. A club acting as controller identifies its own bases.</p>
+      <div class="policy-table-wrap" role="region" aria-label="Purposes and legal bases" tabindex="0">
+        <table>
+          <caption>Purposes, information used and legal bases</caption>
+          <thead><tr><th scope="col">Purpose and information</th><th scope="col">Legal basis</th></tr></thead>
+          <tbody>
+            <tr><td>Authenticate accounts, sync matches/devices and deliver requested scoring, social, club and equipment features, using related account and feature records.</td><td>Contract (Article 6(1)(b)), to the extent necessary to provide the services you request.</td></tr>
+            <tr><td>Optional health recording, fitness analysis and related cloud syncing.</td><td>Consent (Article 6(1)(a)) and explicit consent for health data (Article 9(2)(a)). Sharing health summaries requires a separate, specific choice.</td></tr>
+            <tr><td>Optional device location for nearby discovery and location requests.</td><td>Consent (Article 6(1)(a)), withdrawable in device settings.</td></tr>
+            <tr><td>Purchases, subscriptions, club payments and refunds, using transaction and payment records.</td><td>Contract (Article 6(1)(b)); legal obligation (Article 6(1)(c)) for applicable accounting, tax and statutory requirements.</td></tr>
+            <tr><td>Support and necessary account/session communications, using contact details, requests and notification settings.</td><td>Contract where needed for the Service; otherwise legitimate interests (Article 6(1)(f)) in answering enquiries and administering the Service. Promotional messages require consent where applicable.</td></tr>
+            <tr><td>The Android launch email requested through the waitlist.</td><td>Consent (Article 6(1)(a)), withdrawable by emailing us.</td></tr>
+            <tr><td>Security, preventing misuse, investigating errors and resolving disputes, using necessary technical, account and incident records.</td><td>Legitimate interests (Article 6(1)(f)) in operating a secure, reliable service and protecting users and legal rights, balanced against your interests. This does not authorise health processing or tracking requiring consent.</td></tr>
+            <tr><td>Advertising delivery, measurement, identifiers and tracking.</td><td>Consent (Article 6(1)(a)) where required by data protection and device-storage rules. Non-personalised ads do not automatically remove consent requirements.</td></tr>
+            <tr><td>Accurate venue listings and relevant business enquiries, using public business contact information.</td><td>Legitimate interests (Article 6(1)(f)) in club discovery and relevant business communications, subject to applicable marketing rules and objections.</td></tr>
+            <tr><td>Lawful authority requests, privacy requests and legal claims, using minimum relevant records.</td><td>Legal obligation (Article 6(1)(c)); or legitimate interests in legal claims where appropriate. Special-category data also requires an applicable Article 9 condition.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Consent is specific to the purpose and can be withdrawn without making earlier lawful processing unlawful. Contract and legitimate interests do not replace explicit consent for optional health processing or consent required for advertising technologies.</p>
+    </section>
+
+    <section aria-labelledby="health">
+      <h2 id="health">4. Health and watch data</h2>
+      <p>Health measurements and inferences can be sensitive personal data. We use them to record badminton activity, show session information and provide fitness/performance insights. These are not medical diagnoses.</p>
+      <ul>
+        <li><strong>Apple Watch/Apple Health:</strong> compatible features read heart rate, active energy and distance during workouts and write workout records with permission. Match and health measurements can pass from watch to phone and your Shuttls account.</li>
+        <li><strong>Android Health Connect:</strong> the integration requests read access to heart rate, active calories burned and distance for the relevant session period. It reads these records rather than editing the original records. Summaries can be included in synced Shuttls matches.</li>
+        <li><strong>Other watches:</strong> Wear OS, Garmin and supported Amazfit/Zepp features collect supported session/sensor measurements. Linked watches transfer match information to Shuttls directly or through companion services. Garmin can also save an activity to Garmin Connect under its own privacy arrangements.</li>
+      </ul>
+      <p>Device permissions control access to records. Explicit consent for Shuttls’ health processing must also explain its purposes, cloud syncing and any sharing. Platform permission and acceptance of this notice must not be treated as permission for every further use. Access and use must comply with Apple Health and Google Health Connect requirements, including Google’s Limited Use requirements.</p>
+      <p>We do not use health records or inferences to target ads, sell them to data brokers, or provide them to advertisers or insurers. Supabase processes synced health records as our hosting provider. <strong>Existing friend activity summaries include average heart rate and calories.</strong> Such sharing requires specific health-sharing consent and must be disabled where that consent has not been obtained.</p>
+      <p>Revoke access in Apple Health/Watch privacy settings, Health Connect permissions or your watch settings. Email us to withdraw health-processing/sharing consent or delete Shuttls’ copies. Revocation stops future access; it does not automatically erase previously synced records or originals in Apple Health, Health Connect or Garmin Connect. Manage those originals separately.</p>
+      <p><strong>Draft verification:</strong> separate, recorded consent for cloud health processing and social health sharing has not been established from the current source. This requires implementation and verification before relying on the consent bases stated here.</p>
+    </section>
+
+    <section aria-labelledby="visibility">
+      <h2 id="visibility">5. Social and public sharing</h2>
+      <p>Your displayed name/username, photo, rating, rank, match results, participation and player statistics can be visible to other users through profiles, games, club lists and leaderboards. Match summaries and opponent names should not be treated as private diary entries.</p>
+      <p>Friends can see games, wins/losses, rating changes, recent-play indications and, in existing summaries, calories and average heart rate. Detailed sensor timelines are stored separately. Removing a friend restricts future friend-only access; it does not recall copies or remove information visible through another feature.</p>
+      <p>Organisers and authorised club administrators can access records needed to run the club, including member/guest names, attendance, court allocations, balances, memberships and payment status. Participants see relevant rosters and games. Public club listings and posted content can be visible more widely. Ask the club about its own use of records.</p>
+      <p><strong>QR/NFC links:</strong> anyone with your friend QR link can view the linked player card, including username, photo, rating, games, league and win rate, without signing in. Public Shuttls Tap links also show equipment details and the player card. New racket profiles currently default to Public; review visibility before sharing. Private and Shuttls-only options restrict the relevant racket view. Public club join/check-in links reveal the relevant club/session details.</p>
+      <p>If you export results or share to another service, your chosen recipient receives the information and handles it under its own arrangements. Public material and links can be forwarded or copied. Do not share another person’s sensitive data without an appropriate basis and their knowledge.</p>
+    </section>
+
+    <section aria-labelledby="providers">
+      <h2 id="providers">6. Providers and recipients</h2>
+      <p>Recipients below receive information needed for the features used. Providers acting on our instructions are processors; platforms may also be independent controllers for their own services.</p>
+      <ul>
+        <li><strong>Supabase:</strong> authentication, database, files, backend functions and syncing, including profiles, matches, related health data, club records, tokens and waitlist submissions. <a href="https://supabase.com/privacy">Privacy information</a>.</li>
+        <li><strong>Apple/Google:</strong> sign-in where offered, app distribution, purchases, permitted diagnostics, health connections, maps/location and push delivery through Apple Push Notification service or Firebase Cloud Messaging. <a href="https://www.apple.com/legal/privacy/">Apple privacy</a>; <a href="https://policies.google.com/privacy">Google privacy</a>.</li>
+        <li><strong>RevenueCat:</strong> purchase validation/subscription management using app user identifiers, purchase history and entitlement status. <a href="https://www.revenuecat.com/privacy/">Privacy information</a>.</li>
+        <li><strong>Stripe:</strong> club payments, billing, refunds and connected payment accounts, including relevant payment, fraud and verification information. Stripe handles payment details directly and supplies transaction references/status to Shuttls. <a href="https://stripe.com/privacy">Privacy information</a>.</li>
+        <li><strong>Google AdMob/advertising partners:</strong> ad-related technical and interaction data where advertising operates. The consent message must identify participating partners and choices. <a href="https://policies.google.com/technologies/partner-sites">Google partner-services information</a>.</li>
+        <li><strong>Garmin/Amazfit/Zepp:</strong> connected watch/companion features, pairing and activity transfer according to the integration. <a href="https://www.garmin.com/en-GB/privacy/global/">Garmin privacy</a>; see the notice in your Zepp service.</li>
+        <li><strong>Website/email providers:</strong> GitHub Pages for site delivery; Google Fonts on pages loading its fonts; email providers and Resend for applicable communications. They receive necessary request or contact/message data. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy</a>; <a href="https://resend.com/legal/privacy-policy">Resend privacy</a>.</li>
+        <li><strong>Other users, clubs and chosen recipients:</strong> as described in section 5.</li>
+      </ul>
+      <p>Relevant information may go to advisers, courts, regulators or authorities for legal obligations or claims. If the Service transfers to another operator, records may transfer subject to law, appropriate protections and notice. This does not authorise incompatible new uses of health or advertising data.</p>
+      <p>Shuttls does not offer account, match or health records for sale to data brokers. Advertising disclosures can nevertheless count as “sale”, “sharing” or targeted advertising under some US laws even without payment for data. See sections 7 and 12. Advertising identifiers are not necessarily anonymous.</p>
+    </section>
+
+    <section aria-labelledby="advertising">
+      <h2 id="advertising">7. Advertising and tracking</h2>
+      <p>Some phone features include Google AdMob rewarded ads. Its SDK can collect the data described in section 2 for delivery, measurement and fraud prevention. Google/partners may combine it with other information where permissions and law allow.</p>
+      <p>Advertising storage, access, personalisation and tracking must wait for valid consent where required. Refusing optional consent must not prevent ordinary use of the Service. Non-personalised ads can still access device information and require UK/EU consent. Watching a rewarded ad is not by itself consent to tracking.</p>
+      <p>On iOS, manage cross-app tracking in Settings &gt; Privacy &amp; Security &gt; Tracking. Android provides advertising-ID and ad privacy settings. These controls do not replace service-specific consent choices or erase data already collected. Where your version provides advertising privacy options, use them to review choices; you can also email us with an objection, withdrawal or opt-out.</p>
+      <p><strong>Draft verification:</strong> the current source does not establish a complete advertising consent and withdrawal flow. Disable advertising where required consent is absent, or implement and verify that flow before this policy becomes effective.</p>
+    </section>
+
+    <section aria-labelledby="website">
+      <h2 id="website">8. Website and email</h2>
+      <p>The current public website has no dedicated visitor analytics or advertising script. Hosts still receive IP addresses, browser/request information and timestamps to deliver and protect the site. GitHub Pages logs visitor IP addresses for security.</p>
+      <p>Other site pages load Google Fonts, which receives technical request information. This privacy page uses system fonts and makes no Google Fonts request. QR/club/racket pages request records from Supabase to resolve the link. External links take you to that service.</p>
+      <p>App storage, sign-in tokens and preferences support requested features. Non-essential cookies, identifiers and similar storage/access technologies require the choices prescribed by law before use. Blocking storage can affect sign-in/settings. New website analytics or advertising requires updated disclosures and controls before activation.</p>
+      <p>The Android waitlist uses your email for the requested launch notification. <a href="mailto:privacy@shuttlsapp.com?subject=Remove%20me%20from%20the%20Android%20waitlist">Email us to leave the waitlist</a>. Signup is not consent to unrelated marketing. The contact form opens your email application, whose provider sends the message to us. Optional promotional messages must offer appropriate opt-outs; necessary service messages are separate.</p>
+    </section>
+
+    <section aria-labelledby="transfers">
+      <h2 id="transfers">9. International transfers</h2>
+      <p>Shuttls’ production Supabase database is hosted in <strong>Stockholm, Sweden (AWS eu-north-1)</strong>, within the European Economic Area. This was checked against the live project configuration on 6 October 2026. This is the primary database region, not a promise that all processing stays in Sweden.</p>
+      <p>Supabase and other providers operate internationally, including in the United States. Support, infrastructure logs, email delivery, purchase services and subprocessors can involve processing outside your country, the UK or the European Economic Area. A provider’s registered office does not establish every processing location.</p>
+      <p>Where transfer restrictions apply, a valid mechanism is required: an applicable adequacy decision, including a data protection framework only for covered recipients/processing; or approved contractual safeguards such as EU Standard Contractual Clauses and the UK International Data Transfer Agreement or UK Addendum, with required transfer assessment and supplementary protections.</p>
+      <p>Email us for destinations and a copy/explanation of applicable safeguards, subject to necessary redactions. Agreement with this notice is not consent to an international transfer.</p>
+      <p>The published data-processing terms of <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">Supabase</a>, <a href="https://www.revenuecat.com/dpa">RevenueCat</a> and <a href="https://resend.com/legal/dpa">Resend</a> provide EU Standard Contractual Clauses and the UK Addendum for relevant restricted transfers. See <a href="https://supabase.com/legal/customer-resources/subprocessor-list">Supabase’s current subprocessor list</a> for its infrastructure/support recipients and locations. These safeguards apply according to the relevant agreement and transfer; they do not make optional processing lawful without its required consent.</p>
+      <p><strong>Publication check:</strong> retain the provider terms applicable to Shuttls’ accounts, document the required transfer assessments and confirm any representative required by the Service’s actual overseas operations. No separate custom contract or completed assessment is asserted by this draft.</p>
+    </section>
+
+    <section aria-labelledby="retention">
+      <h2 id="retention">10. Retention and deletion</h2>
+      <p>Retention depends on purpose, continuing need, your choices and applicable legal requirements. The criteria below apply; provider copies may not disappear immediately.</p>
+      <ul>
+        <li><strong>Accounts, matches, health, social and equipment records:</strong> while needed for your account/history and requested features, unless deleted or you request deletion sooner. Unneeded records should be erased or irreversibly anonymised. You can request health-data deletion independently of your account.</li>
+        <li><strong>Club records:</strong> for membership, attendance, billing/dispute needs and applicable legal requirements. Clubs acting as controllers set their own retention, including for guests.</li>
+        <li><strong>Financial/legal records:</strong> for applicable accounting, tax, fraud or claim requirements, limited to needed records. A financial retention duty does not justify retaining health history.</li>
+        <li><strong>Support/error records:</strong> for the enquiry/incident and proportionate follow-up, security or dispute needs; then deletion/anonymisation.</li>
+        <li><strong>Waitlist:</strong> until the launch email and necessary delivery handling are complete, or withdrawal sooner.</li>
+        <li><strong>Pairing/local data:</strong> one-time watch pairing codes expire after ten minutes. Settings, credentials and pending uploads remain until cleared, signed out or removed as supported by the platform. OS backups may remain after uninstalling.</li>
+        <li><strong>Backups/logs:</strong> until applicable expiry cycles, protected and restricted to necessary recovery/security purposes. Shuttls currently uses Supabase’s Free plan. Its published guaranteed daily-backup retention windows apply to paid plans; this notice does not promise a seven-, fourteen- or thirty-day backup window for Shuttls. Platform recovery copies, if held, follow the provider’s applicable arrangements. Any separately created backup needs its own documented expiry. Deletions must be reapplied after restoration.</li>
+      </ul>
+      <p>Use <strong>Settings &gt; Delete Account</strong> in the phone app or <a href="mailto:privacy@shuttlsapp.com?subject=Shuttls%20account%20deletion%20request">email us to request deletion</a>. Include your account email, never your password. We may require proportionate verification. Contact us if in-app deletion fails or you want particular records removed.</p>
+      <p>Uninstalling does not delete the hosted account. Account deletion does not automatically cancel store subscriptions or club memberships; manage those with the store/club. Other users’ copies, clubs’ legally retained records and independent Health/Garmin records need separate handling, subject to your rights.</p>
+      <p>These are purpose-based retention criteria, rather than a promise that every record expires automatically after a fixed number of days. The current database has no general automatic expiry job for support/error records, location requests or waitlist entries. You can request erasure through the contact route above; continued retention must be justified by a remaining lawful purpose.</p>
+      <p><strong>Publication check:</strong> test deletion coverage for stored files, club/guest associations and provider copies, and put the retention reviews and request-handling procedure into operation. The mobile deletion error handling has been corrected locally; it has not yet been released.</p>
+    </section>
+
+    <section aria-labelledby="security">
+      <h2 id="security">11. Security</h2>
+      <p>Shuttls uses encrypted HTTPS connections to its backend and account-based authentication. Access controls are intended to distinguish personal records, club administration and shared features. Access must be limited to people/providers who need it for stated purposes.</p>
+      <p>No service guarantees absolute security. Protect devices, credentials and pairing codes. Report suspected privacy/security issues to <a href="mailto:privacy@shuttlsapp.com">privacy@shuttlsapp.com</a>. Where required, we will notify regulators and affected people of personal data breaches.</p>
+    </section>
+
+    <section aria-labelledby="rights">
+      <h2 id="rights">12. Your rights and choices</h2>
+      <p>Rights depend on location, applicable law and circumstances. Under UK/EU data protection law they include:</p>
+      <ul>
+        <li>Access to personal data and information about its use.</li>
+        <li>Correction of inaccurate/incomplete data.</li>
+        <li>Erasure where applicable, including after consent withdrawal where no other ground permits retention.</li>
+        <li>Restriction of processing in specified circumstances.</li>
+        <li>Portability of qualifying data processed automatically on consent or contract.</li>
+        <li>Objection to legitimate-interests processing because of your situation, and to direct marketing at any time.</li>
+        <li>Withdrawal of consent and applicable rights concerning significant solely automated decisions.</li>
+        <li>Regulatory complaints and applicable judicial remedies.</li>
+      </ul>
+      <p><a href="mailto:privacy@shuttlsapp.com?subject=Shuttls%20privacy%20rights%20request">Email us to exercise a right</a> or request a machine-readable copy. No special legal wording is needed. We normally respond to UK/EU rights requests within one month, subject to lawful verification, clarification or extension rules. We explain extensions/exceptions. Requests are normally free; a fee or refusal is permitted only where law allows.</p>
+      <p>Edit supported profile fields, remove friends, change racket visibility, adjust notifications and revoke permissions in the relevant settings. Withdrawal affects the associated feature. Direct-marketing objections do not affect your ordinary account.</p>
+      <p><strong>Other locations, including US states:</strong> where a law covers Shuttls and your request, additional rights may include knowing, obtaining, correcting/deleting data; opting out of sale, sharing or targeted ads; limiting specified sensitive uses; using an authorised agent; and appealing refusals. Email us for an opt-out/appeal. We verify only as necessary, explain decisions and do not discriminate for exercising protected rights. Recognised browser opt-out signals must be honoured where applicable law requires it. This does not assert that every US law’s applicability threshold is met.</p>
+    </section>
+
+    <section aria-labelledby="children">
+      <h2 id="children">13. Children and young people</h2>
+      <p><strong>You must be at least 13 to create a personal Shuttls account.</strong> The Service is not intended for personal accounts belonging to children under 13. If a younger child has supplied data, <a href="mailto:privacy@shuttlsapp.com?subject=Child%20privacy%20concern">contact us</a> so we can investigate and take appropriate action, including deletion where required. A club’s guest record is not a personal account; clubs must have an appropriate basis and provide privacy information for children’s records too.</p>
+      <p><strong>If you are 13–17:</strong> your player name, photo, results and shared links can be seen by other people. Choose a nickname instead of your full name where supported, avoid a photo that identifies your school or home, and do not publish your address, contact details or sensitive information. A public QR/NFC link can be forwarded. Review racket visibility and only accept friend requests from people you know. Ask a trusted adult if a sharing choice is unclear.</p>
+      <p>Health and location access are optional for an ordinary account. Leave those permissions off if you do not want to provide that information. Current friend summaries can include heart rate and calories; keep health access off if you do not want those measurements synced/shared, and contact us to remove existing copies. A parent, guardian or younger user can use the privacy email to report unsafe sharing, request help or exercise applicable rights. We will use proportionate verification and will not ask you to email a password.</p>
+      <p>Parental authorisation is needed where the applicable law requires it for consent-based processing. A 13+ minimum does not override another country’s higher consent age or remove safeguards required for all under-18s. A store age rating is not privacy consent.</p>
+      <p><strong>Publication check:</strong> the minimum-age rule is confirmed, but the current app does not demonstrate a reliable age gate or complete under-18 protections. Before publication/release, assess the risks to children, implement proportionate age assurance, make private sharing the default, keep unnecessary location and profiling off, prevent behavioural advertising to younger users and explain choices at the point of use. This draft does not claim that those controls are already deployed.</p>
+    </section>
+
+    <section aria-labelledby="automated">
+      <h2 id="automated">14. Automated processing</h2>
+      <p>Shuttls calculates statistics, experience, rankings, Shuttl Scores and insights from match results, opponent ratings, playing history and permitted sensor information for fitness insights. Court allocation can use ratings/participation to suggest balanced games. Calculations affect displays and game suggestions.</p>
+      <p>These features provide sporting feedback and club organisation. They are not intended for solely automated decisions with legal or similarly significant effects, such as credit, insurance, employment or treatment decisions. Estimates can be wrong. Contact us about inaccurate inputs or an outcome you want explained or reviewed.</p>
+    </section>
+
+    <section aria-labelledby="complaints">
+      <h2 id="complaints">15. Complaints</h2>
+      <p><a href="mailto:privacy@shuttlsapp.com?subject=Shuttls%20data%20protection%20complaint">Email us with a data protection complaint</a>, describing the concern and desired outcome. We will acknowledge a UK data protection complaint within 30 days, investigate without undue delay, keep you informed as appropriate and communicate the outcome.</p>
+      <p>You can complain to the UK Information Commissioner’s Office at <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk/make-a-complaint</a> or <a href="tel:+443031231113">0303 123 1113</a>. Where EU GDPR applies, contact the authority where you live/work or where the alleged infringement occurred; see the <a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en">EDPB authority directory</a>. Other countries may have local routes. Contacting us does not remove regulatory or judicial remedies.</p>
+    </section>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">16. Policy changes</h2>
+      <p>The policy will remain at <a href="https://shuttlsapp.com/privacy.html">shuttlsapp.com/privacy.html</a>, with an updated date when changed. Material changes will receive appropriate notice through the app, website or email before new processing where required. New consent will be requested separately where needed; continued use does not supply it.</p>
+      <p>Privacy contact: <a href="mailto:privacy@shuttlsapp.com">privacy@shuttlsapp.com</a>.</p>
+    </section>
+    <a class="back" href="index.html">&larr; Back to home</a>
   </main>
 </body>
 </html>
