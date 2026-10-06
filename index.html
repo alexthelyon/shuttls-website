@@ -81,6 +81,27 @@
   </div>
 </section>
 
+<!-- ANDROID WAITLIST -->
+<section class="android-bar-sec">
+  <div class="wrap">
+    <div class="android-bar reveal">
+      <div class="ab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.46 11.46 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg></div>
+      <div class="ab-copy">
+        <span class="label gold">Coming soon</span>
+        <h2 class="display">Shuttls for <em>Android.</em></h2>
+        <p>Be first in line when it lands. Join the waitlist and we&rsquo;ll email you once, on launch day.</p>
+      </div>
+      <div class="ab-form">
+        <form class="waitlist" novalidate>
+          <input type="email" name="email" required placeholder="Your email address" autocomplete="email" aria-label="Email address">
+          <button type="submit" class="btn btn-gold">Join the waitlist</button>
+        </form>
+        <p class="waitlist-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="shuttle-divider" aria-hidden="true"></div>
 
 <!-- ═══════════════ FOR PLAYERS ═══════════════ -->
@@ -914,6 +935,28 @@
       });
     });
   })();
+</script>
+<script>
+(() => {
+  const form = document.querySelector('.waitlist'), msg = document.querySelector('.waitlist-msg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value.trim(), btn = form.querySelector('button');
+    const say = (t, err) => { msg.textContent = t; msg.classList.toggle('err', !!err); };
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say('Please enter a valid email address.', true);
+    btn.disabled = true; say('Joining…');
+    try {
+      const r = await fetch('https://hytqucmpyvjgrzaofjdi.supabase.co/rest/v1/android_waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: 'sb_publishable_dzXgfT8A0gJyf44iWaeDZA_Bft6EQNU', Prefer: 'return=minimal' },
+        body: JSON.stringify({ email, source: 'website' })
+      });
+      if (r.ok || r.status === 409) { form.reset(); say("You're on the list! We'll email you when Android launches."); }
+      else throw new Error(r.status);
+    } catch (_) { say('Something went wrong. Please try again.', true); }
+    btn.disabled = false;
+  });
+})();
 </script>
 </body>
 </html>
