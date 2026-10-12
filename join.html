@@ -35,16 +35,16 @@
     const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
     const id = params.get('id') || '', pin = params.get('pin') || '';
     const q = (s) => document.getElementById(s);
-    if (!uuid.test(id) || (pin && !/^[0-9]{3,8}$/.test(pin))) {
+    if (!uuid.test(id) || (pin && !/^[A-Za-z0-9!?$@*]{3,12}$/.test(pin))) {
       q('title').textContent = 'Scan the group QR';
       q('description').textContent = 'This link is incomplete. Scan the group QR again or ask the organiser for a new link.';
     } else {
-      const app = `shuttls://join?id=${id.toLowerCase()}${pin ? '&pin=' + pin : ''}`;
+      const app = `shuttls://join?id=${id.toLowerCase()}${pin ? '&pin=' + encodeURIComponent(pin) : ''}`;
       const android = /Android/i.test(navigator.userAgent);
       const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       q('actions').hidden = false; q('hint').hidden = false; q('open').href = app; q('ios').hidden = false;
       // Android: hand straight to the app (the shuttls://join handler) through a Chrome intent link.
-      const intent = `intent://join?id=${id.toLowerCase()}${pin ? '&pin=' + pin : ''}#Intent;scheme=shuttls;package=com.shuttls.android;end`;
+      const intent = `intent://join?id=${id.toLowerCase()}${pin ? '&pin=' + encodeURIComponent(pin) : ''}#Intent;scheme=shuttls;package=com.shuttls.android;end`;
       if (android) { q('ios').hidden = true; q('hint').hidden = true; q('open').href = intent; }
       q('ios').addEventListener('click', () => { try { navigator.clipboard.writeText(app).catch(() => {}); } catch (e) {} });
 
