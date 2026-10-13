@@ -38,3 +38,8 @@
   .privacy-policy tr { break-inside: avoid; }
   .privacy-policy .policy-table-wrap { overflow: visible; }
 }
+
+.privacy-policy .policy-summary { border-left: 3px solid var(--gold); background: var(--surface); border-radius: var(--r-md); padding: 22px; margin: 26px 0; }
+.privacy-policy .policy-summary h2 { margin-top: 0; }
+.privacy-policy .policy-summary p { margin-bottom: 0; }
+.privacy-policy .policy-choice { border-left: 3px solid var(--gold); padding-left: 18px; }
