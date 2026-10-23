@@ -868,3 +868,7 @@ footer small { color: var(--text-faint); font-size: 13px; width: 100%; }
 .pillar h3 { font: 700 clamp(26px, 3vw, 34px)/1.05 var(--serif); letter-spacing: -.01em; }
 .pillar p { color: var(--text-dim); font-size: 15.5px; }
 @media (max-width: 760px) { .pillars { grid-template-columns: 1fr; } }
+
+/* Store screenshots in feature sections */
+.shotwrap { display: flex; justify-content: center; }
+.shot { width: min(100%, 340px); height: auto; border-radius: 28px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
