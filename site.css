@@ -860,7 +860,8 @@ footer small { color: var(--text-faint); font-size: 13px; width: 100%; }
 .platforms li { display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font: 600 14px/1 var(--sans); color: var(--text); transition: border-color .2s, transform .2s; }
 .platforms li:hover { border-color: var(--gold-deep); transform: translateY(-2px); }
 .platforms li svg { width: 18px; height: 18px; color: var(--gold); }
-.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
 .pillar { position: relative; display: grid; gap: 10px; align-content: start; padding: 26px 26px 28px; border: 1px solid var(--line); border-radius: var(--r-lg); background: linear-gradient(180deg, var(--surface-high), var(--surface)); text-decoration: none; transition: border-color .2s, transform .2s; }
 .pillar:hover { border-color: var(--gold-deep); transform: translateY(-4px); }
 .pillar .pn { font: 700 13px/1 var(--serif); letter-spacing: .12em; color: var(--gold); }

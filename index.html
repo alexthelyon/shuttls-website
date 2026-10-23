@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css?v=20261018">
+  <link rel="stylesheet" href="site.css?v=20261023">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"MobileApplication","name":"Shuttls","operatingSystem":"iOS, Android, watchOS, Wear OS","applicationCategory":"SportsApplication",
@@ -109,8 +109,9 @@
 
     <div class="pillars">
       <a class="pillar reveal" href="#scoring"><span class="pn">01</span><h3>Score</h3><p>Tap to score singles or doubles, from your phone or your wrist.</p></a>
-      <a class="pillar reveal d1" href="#discover"><span class="pn">02</span><h3>Join</h3><p>Find clubs near you and follow everything on the notice board.</p></a>
-      <a class="pillar reveal d2" href="#compete"><span class="pn">03</span><h3>Compete</h3><p>Earn a Shuttl Score, join a division and climb the ladder.</p></a>
+      <a class="pillar reveal d1" href="#groups"><span class="pn">02</span><h3>Play</h3><p>Make a group, tap &ldquo;I&rsquo;m here&rdquo; and every game is logged for you.</p></a>
+      <a class="pillar reveal d2" href="#discover"><span class="pn">03</span><h3>Join</h3><p>Find clubs near you and follow everything on the notice board.</p></a>
+      <a class="pillar reveal d3" href="#compete"><span class="pn">04</span><h3>Compete</h3><p>Start on a 3.00 grade, join a division and climb the ladder.</p></a>
     </div>
 
     <!-- SCORING -->
@@ -169,6 +170,49 @@
     <!-- DISCOVER + NOTICE BOARD -->
     <div style="margin-top:clamp(72px,9vw,120px)"></div>
     <!-- DISCOVER + NOTICE BOARD -->
+    <!-- GROUPS -->
+    <div class="split" id="groups" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="copy">
+        <span class="label gold reveal">Play with friends</span>
+        <h2 class="display reveal d1">Badminton with friends,<br>sorted.</h2>
+        <p class="lede reveal d2">Make a private group for your regulars. Your friends tap &ldquo;I&rsquo;m here&rdquo; as they reach the court, Shuttls fills the games, and everything you play goes into your history.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>One tap to start</b>: invite friends with a link or QR, then play with the group from your Court tab.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Every game logged</b>: scores, rankings and recaps for the whole group, with your watch&rsquo;s heart rate if you wear one.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Split the court cost</b>: see who has paid and who hasn&rsquo;t, so nobody is left chasing.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Playing at a club?</b> Scan their check-in poster when you arrive and your games that night are logged for you.</span></li>
+        </ul>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">Saturday doubles</span><span class="chip">Private group</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>You</b><small>Here &middot; ready to play</small></div><span class="chip">I&rsquo;m here</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Maya</b><small>Here &middot; ready to play</small></div><span class="chip">I&rsquo;m here</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Sam</b><small>Here &middot; ready to play</small></div><span class="chip">I&rsquo;m here</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Joe</b><small>On the way</small></div><span class="chip mute">Waiting</span></div>
+        <div class="tiles">
+          <div class="tile"><span class="num">38</span><small>Games together</small></div>
+          <div class="tile"><span class="num">&pound;8</span><small>Each, court split</small></div>
+          <div class="tile"><span class="num">4</span><small>Confirmed</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAP / RACKETS -->
+    <div class="split flip" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="copy">
+        <span class="label gold reveal">Shuttls Tap</span>
+        <h2 class="display reveal d1">Tap in.<br>Show your racket.</h2>
+        <p class="lede reveal d2">Add your rackets to Shuttls with brand, strings and grip. A Shuttls Tap tag lets anyone tap their phone to see your racket and player card, and tap players into a group game.</p>
+        <p class="fine reveal d3">Racket profiles are public by default. You can switch them to Shuttls-only or private.</p>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">My rackets</span><span class="chip">Tap to share</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Match racket</b><small>Brand &middot; strings &middot; grip</small></div><span class="chip">Public</span></div>
+        <div class="clubrow"><span class="em">🏸</span><div><b>Spare racket</b><small>Brand &middot; strings &middot; grip</small></div><span class="chip mute">Private</span></div>
+      </div>
+    </div>
+
+    <!-- DISCOVER -->
     <div class="split" id="discover">
       <div class="copy">
         <span class="label gold reveal">Club discovery</span>
@@ -207,7 +251,7 @@
       <div class="head center">
         <span class="label gold reveal">Compete</span>
         <h2 class="display reveal d1">Climb the ladder.<br>Win the club.</h2>
-        <p class="lede reveal d2">Your Shuttl Score places you in a division that reflects how you really play. Win to climb, and see where you stand in your own club.</p>
+        <p class="lede reveal d2">Everyone starts on a 3.00 grade. Win competitive games and your grade and division move with you, and you can see where you stand in your own club. Games logged without opponents earn rewards but never change your grade.</p>
       </div>
       <div class="ladder reveal" style="justify-content:center">
         <span class="tier"><i style="--c:#727983"></i>Rookie</span>
@@ -227,6 +271,28 @@
       </div>
     </div>
   </div>
+    <!-- SHUTTLS+ -->
+    <div class="split" id="plus" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="copy">
+        <span class="label gold reveal">Shuttls+</span>
+        <h2 class="display reveal d1">Take your game<br>further.</h2>
+        <p class="lede reveal d2">Shuttls is free to play. Shuttls+ is an optional subscription for players who want more.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>Performance Lab</b>: your scoring, heart rate, movement and energy across every session and game.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Premium watch faces</b>: every premium scoreboard face for your watch.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Unlimited Quick Play</b>: start as many games as you like.</span></li>
+        </ul>
+        <p class="fine reveal d3">Cancel anytime in your App Store or Google Play settings.</p>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">Performance Lab</span><span class="chip">Shuttls+</span></div>
+        <div class="tiles">
+          <div class="tile"><span class="num">+6</span><small>Points won, last 10 sessions</small></div>
+          <div class="tile"><span class="num">148</span><small>Avg bpm</small></div>
+          <div class="tile"><span class="num">620</span><small>kcal</small></div>
+        </div>
+      </div>
+    </div>
 </section>
 
 <div class="shuttle-divider" aria-hidden="true"></div>
@@ -250,6 +316,7 @@
         <li><svg><use href="#i-check"/></svg><span><b>Members walk straight in</b>: their plan or pass covers the session automatically.</span></li>
         <li><svg><use href="#i-check"/></svg><span><b>Newcomers join as they check in</b>: every name lands on your roster without you collecting a thing.</span></li>
         <li><svg><use href="#i-check"/></svg><span><b>No more missed payments</b>: everyone who checks in is on the roster with what they owe, so nobody slips away without paying.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>A ticket on their phone</b>: players see their check-in and payment status, and on supported phones their live session on the lock screen.</span></li>
       </ul>
     </div>
     <div class="club-top">
@@ -371,7 +438,7 @@
         <div>
           <span class="label">Your custom memberships</span>
           <h3 style="margin-top:10px">Plans that bill themselves</h3>
-          <p>Offer weekly, monthly or yearly plans with sessions included. Players join in a tap right from check-in.</p>
+          <p>Offer weekly, monthly or yearly plans with sessions included, or a one-time term membership with its own start date, end date and sign-up cut-off. Players join in a tap right from check-in.</p>
         </div>
         <div class="viz plans">
           <div class="pl-row hot"><div><b>Walk-in</b><small>Pay as you play</small></div><span class="num">£6<small> / session</small></span></div>
@@ -532,6 +599,33 @@
   </div>
 </section>
 
+<!-- CLUBS PLUS -->
+<section class="rule" id="clubs-plus">
+  <div class="wrap">
+    <div class="split">
+      <div class="copy">
+        <span class="label gold reveal">Shuttls+ For Clubs</span>
+        <h2 class="display reveal d1">Make it official.<br>Know your club.</h2>
+        <p class="lede reveal d2">Running a club is free. Shuttls+ For Clubs adds more for the people who run it, and your own Shuttls+ is included.</p>
+        <ul class="ticks reveal d3">
+          <li><svg><use href="#i-check"/></svg><span><b>Verified club badge</b>: a Verified Club banner and gold border in Discover, and a higher place in the list.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Session recaps</b>: an hour after each session, player of the night, dream team and closest game land on your bulletin.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Month in review</b>: a cinematic of your club&rsquo;s month with player of the month, most improved, best duo and newcomers.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Deeper insights</b>: who keeps coming back, who&rsquo;s drifting, your busiest days and what each visit is worth, with a spreadsheet export.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>More help and more plans</b>: more than 3 admins and as many memberships as your club needs.</span></li>
+        </ul>
+        <p class="fine reveal d3">One subscription covers every club you organise.</p>
+      </div>
+      <div class="mockcard reveal d2">
+        <div class="top"><span class="label">Month in review</span><span class="chip">Shuttls+ For Clubs</span></div>
+        <div class="clubrow"><span class="em">🏆</span><div><b>Player of the month</b><small>Maya</small></div></div>
+        <div class="clubrow"><span class="em">📈</span><div><b>Most improved</b><small>Sam</small></div></div>
+        <div class="clubrow"><span class="em">🤝</span><div><b>Best duo</b><small>9 wins from 10 games as a pair</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- START -->
 <section class="rule">
   <div class="wrap">
@@ -540,7 +634,7 @@
       <h2 class="display reveal d1">Set up tonight.<br>Run it tomorrow.</h2>
     </div>
     <ol class="flow flow-wrap flow-3">
-      <li class="reveal"><h3>Create your club</h3><p>Name it, add your venue and sessions, up to a year of weekly sessions in one go.</p></li>
+      <li class="reveal"><h3>Create your club</h3><p>Name it, add your venue and a weekly schedule. Sessions are created ahead of time and topped up automatically.</p></li>
       <li class="reveal d1"><h3>Print the QR</h3><p>Set your price, spots and payment options, then print the poster or share the link.</p></li>
       <li class="reveal d2"><h3>Run the night</h3><p>Players scan in, you watch the roster fill, and the money lands in your account.</p></li>
     </ol>
@@ -561,7 +655,15 @@
       </details>
       <details>
         <summary>Is Shuttls free?</summary>
-        <p>Players can download Shuttls free on the App Store and Google Play. If you take card payments, the payment provider&rsquo;s normal card fees apply.</p>
+        <p>Yes. Players can download Shuttls free on the App Store and Google Play, and you can create and run a club for free. If you take card payments, the payment provider&rsquo;s normal card fees apply. Shuttls+ and Shuttls+ For Clubs are optional subscriptions that add extras.</p>
+      </details>
+      <details>
+        <summary>What do I get with Shuttls+?</summary>
+        <p>Shuttls+ gives players the Performance Lab, premium watch faces and unlimited Quick Play. Shuttls+ For Clubs gives organisers a verified club badge, session recaps, month in review, deeper insights, more than 3 admins and unlimited memberships, and includes Shuttls+ for the organiser. Cancel anytime.</p>
+      </details>
+      <details>
+        <summary>Can I play with friends without a club?</summary>
+        <p>Yes. Make a private group, invite your friends and play together. Everyone taps &ldquo;I&rsquo;m here&rdquo; when they arrive and your games are logged, with rankings for the group.</p>
       </details>
       <details>
         <summary>How do I get paid?</summary>
