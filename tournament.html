@@ -73,6 +73,8 @@
     }
     .panel input::placeholder { color: var(--text-faint); }
     .panel input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-wash); }
+    .panel label.check { display: flex; align-items: flex-start; gap: 12px; text-transform: none; letter-spacing: 0; font: 500 14.5px/1.4 var(--sans); color: var(--text); padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--ground); cursor: pointer; }
+    .check input { width: 20px; height: 20px; flex: none; margin: 1px 0 0; accent-color: var(--gold); cursor: pointer; }
     .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     .err { color: var(--true-red); font-size: 14px; text-align: center; }
     .consent { font-size: 12.5px; color: var(--text-faint); text-align: center; }
@@ -90,7 +92,7 @@
 
     <svg class="bracket" id="bracket" viewBox="0 0 400 240" role="img" aria-label="A tournament bracket filling in from both sides toward a champion in the middle"></svg>
 
-    <div class="facts"><span>Best of 3 games</span><span>Prizes to be won</span><span>Price, time and location to be decided</span></div>
+    <div class="facts"><span>UK-based, Midlands</span><span>Best of 3 games</span><span>Prizes to be won</span><span>Price, time and location to be decided</span></div>
 
     <div class="cta">
       <button class="btn btn-gold" id="join" type="button">I'm interested in participating</button>
@@ -131,7 +133,8 @@
         <form id="form" novalidate>
           <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Alex Smith"></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="you@example.com"></div>
-          <div class="field"><label for="partner">Doubles partner <small>(leave blank if you need one)</small></label><input id="partner" name="partner" type="text" maxlength="80" placeholder="Partner's name"></div>
+          <div class="field"><label for="partner">Doubles partner</label><input id="partner" name="partner" type="text" maxlength="80" required placeholder="Partner's name"></div>
+          <label class="check" for="partnerApp"><input id="partnerApp" name="partnerApp" type="checkbox"><span>I have made sure my doubles partner has downloaded Shuttls as well.</span></label>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <p class="err" id="err" role="alert" hidden></p>
           <button class="btn btn-gold" id="go" type="submit">I'm interested in participating</button>
@@ -201,7 +204,9 @@
       const name = $('name').value.trim(), email = $('email').value.trim(), partner = $('partner').value.trim();
       if (!name) return fail('Please add your name.');
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('That email does not look right.');
-      go.disabled = true; go.textContent = 'Joining...';
+      if (!partner) return fail('Please add your doubles partner.');
+      if (!$('partnerApp').checked) return fail('Please tick the box to confirm your partner has downloaded Shuttls.');
+      go.disabled = true; go.textContent = 'Sending...';
       let result = 'ERROR';
       if ($('website').value) result = 'OK'; // bot: pretend success, store nothing
       else {
@@ -220,6 +225,7 @@
         show('done');
       } else if (result === 'INVALID_EMAIL') fail('That email does not look right.');
       else if (result === 'INVALID_NAME') fail('Please add your name.');
+      else if (result === 'INVALID_PARTNER') fail('Please add your doubles partner.');
       else fail('Something went wrong. Please try again in a moment.');
     });
   </script>
