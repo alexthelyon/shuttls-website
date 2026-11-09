@@ -80,6 +80,7 @@
     .consent { font-size: 12.5px; color: var(--text-faint); text-align: center; }
     .consent a { color: var(--text-dim); }
     button.btn[disabled] { opacity: .6; cursor: default; }
+    #join[disabled] { opacity: 1; background: var(--surface); color: var(--gold); border-color: var(--gold-deep); }
   </style>
 </head>
 <body class="land">
@@ -183,6 +184,15 @@
     })();
 
     // ── join flow: ask -> (no: download) -> form -> done ──
+    // once someone has signed up on this device, the form is closed to them
+    const KEY = 'shuttlsTournamentJoined';
+    const markJoined = () => {
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+      $('join').textContent = "You're on the list";
+      $('join').disabled = true;
+    };
+    try { if (localStorage.getItem(KEY)) markJoined(); } catch (e) {}
+
     const dlg = $('dlg'), steps = ['ask', 'no', 'form', 'done'];
     const show = (n) => steps.forEach((s) => { $('s-' + s).hidden = s !== n; });
     const open = () => { show('ask'); try { dlg.showModal(); } catch (e) { dlg.setAttribute('open', ''); } };
@@ -221,7 +231,12 @@
       }
       go.disabled = false; go.textContent = "I'm interested in participating";
       if (result === 'OK') {
-        if (partner) $('doneText').textContent = 'We have you down with ' + partner + '. We will email you as soon as the time, location and price are confirmed.';
+        $('doneText').textContent = 'We have you down with ' + partner + '. We will email you as soon as the time, location and price are confirmed.';
+        markJoined();
+        show('done');
+      } else if (result === 'ALREADY') {
+        $('doneText').textContent = 'That email is already on the list, so there is nothing more to do. We will be in touch.';
+        markJoined();
         show('done');
       } else if (result === 'INVALID_EMAIL') fail('That email does not look right.');
       else if (result === 'INVALID_NAME') fail('Please add your name.');
