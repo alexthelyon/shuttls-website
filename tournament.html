@@ -19,55 +19,180 @@
   <link rel="stylesheet" href="site.css?v=20261004d">
   <style>
     .land main.signup { width: min(100%, 440px); gap: 16px; }
+    .signup .logo-link { display: inline-block; margin-bottom: 8px; }
+    .signup .logo-link .logo-img { margin-bottom: 0; }
     .signup .facts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .signup .facts span { font: 600 12px/1 var(--sans); letter-spacing: .4px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text-dim); background: var(--surface); }
-    .signup form { display: grid; gap: 14px; width: 100%; text-align: left; margin-top: 4px; }
-    .signup .field { display: grid; gap: 6px; }
-    .signup label { font: 600 11px/1 var(--sans); text-transform: uppercase; letter-spacing: .7px; color: var(--text-dim); }
-    .signup label small { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--text-faint); font-size: 12px; }
-    .signup input[type=text], .signup input[type=email] {
-      width: 100%; height: 52px; padding: 0 16px; border-radius: var(--r-md); border: 1px solid var(--line);
-      background: var(--surface); color: var(--text); font: 400 16px/1 var(--sans);
+
+    /* animated bracket: both halves draw in toward the middle, then loop */
+    .bracket { width: 100%; height: auto; overflow: visible; }
+    .bracket .base { fill: none; stroke: rgba(244, 241, 234, .2); stroke-width: 1.6; }
+    .bracket .dot { fill: rgba(244, 241, 234, .3); }
+    .bracket .g { fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-dasharray: 1 1; stroke-dashoffset: 1; stroke-linejoin: round; animation: 8s linear infinite both; }
+    .bracket .r0 { animation-name: dr0; } .bracket .r1 { animation-name: dr1; }
+    .bracket .r2 { animation-name: dr2; } .bracket .r3 { animation-name: dr3; }
+    .bracket .node { fill: none; stroke: rgba(244, 241, 234, .3); stroke-width: 1.6; }
+    .bracket .core, .bracket .ring { transform-box: fill-box; transform-origin: center; }
+    .bracket .core { fill: var(--gold); opacity: 0; animation: core 8s linear infinite both; }
+    .bracket .ring { fill: none; stroke: var(--gold); stroke-width: 1.6; opacity: 0; animation: ring 8s linear infinite both; }
+    @keyframes dr0 { 0%, 4% { stroke-dashoffset: 1; opacity: 1 } 18%, 88% { stroke-dashoffset: 0; opacity: 1 } 96%, 100% { stroke-dashoffset: 0; opacity: 0 } }
+    @keyframes dr1 { 0%, 18% { stroke-dashoffset: 1; opacity: 1 } 32%, 88% { stroke-dashoffset: 0; opacity: 1 } 96%, 100% { stroke-dashoffset: 0; opacity: 0 } }
+    @keyframes dr2 { 0%, 32% { stroke-dashoffset: 1; opacity: 1 } 46%, 88% { stroke-dashoffset: 0; opacity: 1 } 96%, 100% { stroke-dashoffset: 0; opacity: 0 } }
+    @keyframes dr3 { 0%, 46% { stroke-dashoffset: 1; opacity: 1 } 58%, 88% { stroke-dashoffset: 0; opacity: 1 } 96%, 100% { stroke-dashoffset: 0; opacity: 0 } }
+    @keyframes core { 0%, 56% { opacity: 0; transform: scale(.4) } 64% { opacity: 1; transform: scale(1.2) } 70%, 88% { opacity: 1; transform: scale(1) } 96%, 100% { opacity: 0; transform: scale(1) } }
+    @keyframes ring { 0%, 58% { opacity: 0; transform: scale(1) } 61% { opacity: .9; transform: scale(1) } 80%, 100% { opacity: 0; transform: scale(3.4) } }
+    @media (prefers-reduced-motion: reduce) {
+      .bracket .g { animation: none; stroke-dashoffset: 0; }
+      .bracket .core { animation: none; opacity: 1; }
+      .bracket .ring { animation: none; }
     }
-    .signup input::placeholder { color: var(--text-faint); }
-    .signup input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-wash); }
-    .signup .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-    .signup .err { color: var(--true-red); font-size: 14px; text-align: center; min-height: 0; }
-    .signup .consent { font-size: 12.5px; color: var(--text-faint); text-align: center; }
-    .signup .consent a { color: var(--text-dim); }
-    .signup button.btn { width: 100%; }
-    .signup button.btn[disabled] { opacity: .6; cursor: default; }
-    .done { display: grid; gap: 12px; justify-items: center; }
+
+    .signup .cta { display: grid; gap: 12px; width: 100%; margin-top: 4px; }
+    .signup .dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+    .signup .dl .btn { padding: 0 14px; font-size: 14px; }
+
+    dialog { border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: var(--r-lg); padding: 0; width: min(92vw, 420px); max-height: 92svh; overflow: auto; }
+    dialog::backdrop { background: rgba(10, 9, 8, .82); backdrop-filter: blur(4px); }
+    .panel { position: relative; padding: 30px 24px 24px; display: grid; gap: 14px; text-align: center; justify-items: center; }
+    .panel .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; background: transparent; color: var(--text-dim); font-size: 26px; line-height: 1; cursor: pointer; border-radius: 10px; }
+    .panel .x:hover { color: var(--text); }
+    .panel h2 { font-size: 30px; }
+    .panel .lede { font-size: 16px; max-width: 34ch; }
+    .panel .stack { display: grid; gap: 10px; width: 100%; }
+    .panel .warn { font-size: 14.5px; color: var(--text); padding: 12px 14px; border: 1px solid var(--gold-deep); border-radius: var(--r-md); background: var(--gold-wash); }
+    .panel .dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+    .panel .dl .btn { padding: 0 12px; font-size: 14px; }
+
+    .panel form { display: grid; gap: 14px; width: 100%; text-align: left; }
+    .field { display: grid; gap: 6px; }
+    .panel label { font: 600 11px/1 var(--sans); text-transform: uppercase; letter-spacing: .7px; color: var(--text-dim); }
+    .panel label small { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--text-faint); font-size: 12px; }
+    .panel input[type=text], .panel input[type=email] {
+      width: 100%; height: 52px; padding: 0 16px; border-radius: var(--r-md); border: 1px solid var(--line);
+      background: var(--ground); color: var(--text); font: 400 16px/1 var(--sans);
+    }
+    .panel input::placeholder { color: var(--text-faint); }
+    .panel input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-wash); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .err { color: var(--true-red); font-size: 14px; text-align: center; }
+    .consent { font-size: 12.5px; color: var(--text-faint); text-align: center; }
+    .consent a { color: var(--text-dim); }
+    button.btn[disabled] { opacity: .6; cursor: default; }
   </style>
 </head>
 <body class="land">
   <main id="main" class="signup">
-    <img class="logo-img" src="logo.png" alt="Shuttls">
+    <a class="logo-link" href="/" aria-label="Shuttls home"><img class="logo-img" src="logo.png" alt="Shuttls"></a>
     <div class="tap-top">
       <span class="tap-chip">Tournament</span>
       <h1 class="display" id="title">Shuttls Official Tournament</h1>
     </div>
-    <p class="lede">A badminton doubles tournament. Best of 3 games, with prizes to be won. Join the list and we will email you the details first.</p>
-    <div class="facts"><span>Doubles</span><span>Best of 3 games</span><span>Prizes to be won</span><span>Price to be decided</span><span>Time to be decided</span><span>Location to be decided</span></div>
 
-    <form id="form" novalidate>
-      <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Alex Smith"></div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="you@example.com"></div>
-      <div class="field"><label for="partner">Doubles partner <small>(leave blank if you need one)</small></label><input id="partner" name="partner" type="text" maxlength="80" placeholder="Partner's name"></div>
-      <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <p class="err" id="err" role="alert" hidden></p>
-      <button class="btn btn-gold" id="go" type="submit">Join the list</button>
-      <p class="consent">We will only email you about this tournament. See our <a href="privacy.html">privacy policy</a>. Reply to any email to be removed.</p>
-    </form>
+    <svg class="bracket" id="bracket" viewBox="0 0 400 240" role="img" aria-label="A tournament bracket filling in from both sides toward a champion in the middle"></svg>
 
-    <div class="done" id="done" hidden>
-      <div class="badge" aria-hidden="true">🏸</div>
-      <h2 class="display" style="font-size:34px">You're on the list</h2>
-      <p class="lede" id="doneText">We will email you as soon as the time, location and price are confirmed.</p>
+    <div class="facts"><span>Best of 3 games</span><span>Prizes to be won</span><span>Price, time and location to be decided</span></div>
+
+    <div class="cta">
+      <button class="btn btn-gold" id="join" type="button">Join the list</button>
+      <div class="dl">
+        <a class="btn btn-line" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71,19.5c-.83,1.24-1.71,2.45-3.1,2.48-1.37.03-1.81-.79-3.38-.79-1.58,0-2.07.77-3.39.82-1.32.05-2.32-1.32-3.15-2.54C4.0,17.0,2.71,12.45,4.47,9.38c.87-1.52,2.43-2.48,4.12-2.51,1.28-.02,2.5.87,3.29.87.78,0,2.26-1.07,3.81-.91.65.03,2.47.26,3.64,1.98-.09.06-2.17,1.26-2.15,3.77.02,3.02,2.6,4.03,2.63,4.04-.03.06-.53,1.2-1.31,2.36ZM15.25,5.18c.7-.84,1.16-2.01,1.03-3.18-1.01.04-2.23.67-2.95,1.52-.64.75-1.21,1.95-1.06,3.09,1.3.1,2.36-.54,2.98-.43Z"/></svg>Download iOS</a>
+        <a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.shuttls.android" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5Z"/></svg>Download Android</a>
+      </div>
     </div>
   </main>
+
+  <dialog id="dlg" aria-labelledby="dlgTitle">
+    <div class="panel">
+      <button class="x" id="close" type="button" aria-label="Close">&times;</button>
+
+      <div id="s-ask" class="panel-step" style="display:contents">
+        <h2 class="display" id="dlgTitle">Do you have Shuttls downloaded?</h2>
+        <p class="lede">The Shuttls app is mandatory to enter the tournament.</p>
+        <div class="stack">
+          <button class="btn btn-gold" id="yes" type="button">Yes, I have Shuttls</button>
+          <button class="btn btn-line" id="no" type="button">No, not yet</button>
+        </div>
+      </div>
+
+      <div id="s-no" class="panel-step" style="display:contents" hidden>
+        <h2 class="display">Download Shuttls first</h2>
+        <p class="warn">You need Shuttls to enter. It is free to download, and it is mandatory for the tournament.</p>
+        <div class="dl">
+          <a class="btn btn-gold" href="https://apps.apple.com/us/app/shuttls-enhancing-badminton/id6756201633" target="_blank" rel="noopener">Download iOS</a>
+          <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.shuttls.android" target="_blank" rel="noopener">Download Android</a>
+        </div>
+        <div class="stack">
+          <button class="btn btn-line" id="got" type="button">I have downloaded it</button>
+        </div>
+      </div>
+
+      <div id="s-form" class="panel-step" style="display:contents" hidden>
+        <h2 class="display">Join the list</h2>
+        <form id="form" novalidate>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Alex Smith"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="you@example.com"></div>
+          <div class="field"><label for="partner">Doubles partner <small>(leave blank if you need one)</small></label><input id="partner" name="partner" type="text" maxlength="80" placeholder="Partner's name"></div>
+          <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="err" id="err" role="alert" hidden></p>
+          <button class="btn btn-gold" id="go" type="submit">Join the list</button>
+          <p class="consent">We will only email you about this tournament. See our <a href="privacy.html">privacy policy</a>. Reply to any email to be removed.</p>
+        </form>
+      </div>
+
+      <div id="s-done" class="panel-step" style="display:contents" hidden>
+        <div class="badge" aria-hidden="true">🏸</div>
+        <h2 class="display">You're on the list</h2>
+        <p class="lede" id="doneText">We will email you as soon as the time, location and price are confirmed.</p>
+        <div class="stack"><button class="btn btn-line" id="done" type="button">Close</button></div>
+      </div>
+    </div>
+  </dialog>
+
   <script>
     const $ = (id) => document.getElementById(id);
+
+    // ── bracket: 8 slots a side -> 4 -> 2 -> 1 -> champion in the middle ──
+    (function () {
+      const W = 400, H = 240, len = 34, cols = [6, 52, 98, 144];
+      const X = (s, v) => (s ? W - v : v);
+      let base = '', gold = '', dots = '';
+      for (let s = 0; s < 2; s++) {
+        for (let r = 0; r < 4; r++) {
+          const n = 8 >> r;
+          for (let i = 0; i < n; i++) {
+            const y = (i + .5) * H / n;
+            let pts;
+            if (r < 3) {
+              const y2 = ((i >> 1) + .5) * H / (n / 2);
+              pts = [[cols[r], y], [cols[r] + 40, y], [cols[r] + 40, y2], [cols[r + 1], y2]];
+            } else {
+              pts = [[cols[r], y], [cols[r] + len + 14, y]];
+            }
+            const p = pts.map(([x, yy]) => X(s, x) + ',' + yy).join(' ');
+            base += '<polyline class="base" points="' + p + '"/>';
+            gold += '<polyline class="g r' + r + '" pathLength="1" points="' + p + '"/>';
+            if (r === 0) dots += '<circle class="dot" cx="' + X(s, cols[0]) + '" cy="' + y + '" r="2.6"/>';
+          }
+        }
+      }
+      const c = '<circle class="node" cx="200" cy="120" r="9"/><circle class="ring" cx="200" cy="120" r="9"/><circle class="core" cx="200" cy="120" r="7"/>';
+      $('bracket').innerHTML = base + dots + gold + c;
+    })();
+
+    // ── join flow: ask -> (no: download) -> form -> done ──
+    const dlg = $('dlg'), steps = ['ask', 'no', 'form', 'done'];
+    const show = (n) => steps.forEach((s) => { $('s-' + s).hidden = s !== n; });
+    const open = () => { show('ask'); try { dlg.showModal(); } catch (e) { dlg.setAttribute('open', ''); } };
+    const close = () => { try { dlg.close(); } catch (e) { dlg.removeAttribute('open'); } };
+    $('join').addEventListener('click', open);
+    $('close').addEventListener('click', close);
+    $('done').addEventListener('click', close);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+    const toForm = () => { show('form'); setTimeout(() => $('name').focus(), 30); };
+    $('yes').addEventListener('click', toForm);
+    $('got').addEventListener('click', toForm);
+    $('no').addEventListener('click', () => show('no'));
+
     const form = $('form'), err = $('err'), go = $('go');
     const fail = (m) => { err.textContent = m; err.hidden = false; };
     form.addEventListener('submit', async (ev) => {
@@ -92,7 +217,7 @@
       go.disabled = false; go.textContent = 'Join the list';
       if (result === 'OK') {
         if (partner) $('doneText').textContent = 'We have you down with ' + partner + '. We will email you as soon as the time, location and price are confirmed.';
-        form.hidden = true; $('done').hidden = false;
+        show('done');
       } else if (result === 'INVALID_EMAIL') fail('That email does not look right.');
       else if (result === 'INVALID_NAME') fail('Please add your name.');
       else fail('Something went wrong. Please try again in a moment.');
