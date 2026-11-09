@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0A0908">
-  <title>Shuttls Doubles Open | Join the list</title>
-  <meta name="description" content="A badminton doubles tournament from Shuttls. 16 pairs, best of 3 to 15, and everyone plays at least two matches. Join the list to hear first.">
+  <title>Shuttls Official Tournament | Join the list</title>
+  <meta name="description" content="The Shuttls Official Tournament. A badminton doubles tournament, best of 3 games, with prizes to be won. Join the list to hear first.">
   <link rel="canonical" href="https://shuttlsapp.com/tournament.html">
-  <meta property="og:title" content="Shuttls Doubles Open">
-  <meta property="og:description" content="16 pairs. Best of 3 to 15. Everyone plays at least two matches. Join the list.">
+  <meta property="og:title" content="Shuttls Official Tournament">
+  <meta property="og:description" content="Best of 3 games. Prizes to be won. Join the list to hear first.">
   <meta property="og:image" content="https://shuttlsapp.com/og-image.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
@@ -45,10 +45,10 @@
     <img class="logo-img" src="logo.png" alt="Shuttls">
     <div class="tap-top">
       <span class="tap-chip">Tournament</span>
-      <h1 class="display" id="title">Shuttls Doubles Open</h1>
+      <h1 class="display" id="title">Shuttls Official Tournament</h1>
     </div>
-    <p class="lede">16 pairs, best of 3 games to 15. Lose early and you drop into the Plate, so everyone plays at least two matches.</p>
-    <div class="facts"><span>Doubles</span><span>16 pairs</span><span>Date and price soon</span></div>
+    <p class="lede">A badminton doubles tournament. Best of 3 games, with prizes to be won. Join the list and we will email you the details first.</p>
+    <div class="facts"><span>Doubles</span><span>Best of 3 games</span><span>Prizes to be won</span><span>Price to be decided</span><span>Time to be decided</span><span>Location to be decided</span></div>
 
     <form id="form" novalidate>
       <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Alex Smith"></div>
@@ -63,7 +63,7 @@
     <div class="done" id="done" hidden>
       <div class="badge" aria-hidden="true">🏸</div>
       <h2 class="display" style="font-size:34px">You're on the list</h2>
-      <p class="lede" id="doneText">We will email you as soon as the date, venue and price are confirmed.</p>
+      <p class="lede" id="doneText">We will email you as soon as the time, location and price are confirmed.</p>
     </div>
   </main>
   <script>
@@ -91,7 +91,7 @@
       }
       go.disabled = false; go.textContent = 'Join the list';
       if (result === 'OK') {
-        if (partner) $('doneText').textContent = 'We have you down with ' + partner + '. We will email you as soon as the date, venue and price are confirmed.';
+        if (partner) $('doneText').textContent = 'We have you down with ' + partner + '. We will email you as soon as the time, location and price are confirmed.';
         form.hidden = true; $('done').hidden = false;
       } else if (result === 'INVALID_EMAIL') fail('That email does not look right.');
       else if (result === 'INVALID_NAME') fail('Please add your name.');
